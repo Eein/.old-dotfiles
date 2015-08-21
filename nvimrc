@@ -48,6 +48,7 @@ Plugin 'tpope/vim-endwise' " Adds end to things that need it...
 Plugin 'scrooloose/nerdtree'
 " Laravel Blade Syntax
 Plugin 'xsbeats/vim-blade'
+Plugin 'lilydjwg/colorizer'
 
 " Color Scheme
 Bundle 'https://github.com/tomasr/molokai.git'
