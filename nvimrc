@@ -68,8 +68,6 @@ let g:netrw_liststyle=3
 " DelimitMate expanding
 let delimitMate_expand_cr = 1
 let delimitMate_expand_space = 1
-" Change Modifier for Moving items up and down
-let g:move_key_modifier = 'D'
 " Clear all trailling whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
 " Use ~/.vimrc.local if exists
@@ -79,3 +77,6 @@ endif
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
 cabbrev E NERDTree
+au BufNewFile,BufRead *.es6 set filetype=javascript
+" Change Modifier for Moving items up and down
+let g:move_key_modifier = 'C'
