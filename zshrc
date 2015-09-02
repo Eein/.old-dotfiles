@@ -49,7 +49,7 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git bundler brew git osx ruby zsh-syntax-highlighting)
 # User configuration
-export PATH="$HOME/.composer/vendor/bin:/Applications/MAMP/bin/php/php5.5.10/bin:/usr/local/Cellar/qt5/5.3.1/bin:/Users/will/.rvm/gems/ruby-2.1.2/bin:/Users/will/.rvm/gems/ruby-2.1.2@global/bin:/Users/will/.rvm/rubies/ruby-2.1.2/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/will/.rvm/bin"
+export PATH="$HOME/.composer/vendor/bin:/Applications/MAMP/bin/php/php5.5.10/bin:/usr/local/Cellar/qt5/5.3.1/bin:/Users/will/.rvm/gems/ruby-2.1.2/bin:/Users/will/.rvm/gems/ruby-2.1.2@global/bin:/Users/will/.rvm/rubies/ruby-2.1.2/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/will/.rvm/bin:/Library/PostgreSQL/9.4/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh

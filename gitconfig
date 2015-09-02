@@ -1,0 +1,10 @@
+[core]
+  editor = /usr/local/bin/nvim
+  excludesfile = ~/.gitignore
+[user]
+  name = William Volin
+  email = williamvolin@live.com
+[push]
+  default = simple
+[github]
+  user = eeinx
