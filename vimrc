@@ -53,6 +53,12 @@ Plugin 'lilydjwg/colorizer'
 " Color Scheme
 Bundle 'https://github.com/tomasr/molokai.git'
 
+" Vim Snippets
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
