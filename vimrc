@@ -1,7 +1,6 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 syntax enable
-colorscheme molokai
 set guifont=Monaco:h16
 " turn on line numbers
 set number
@@ -51,7 +50,7 @@ Plugin 'xsbeats/vim-blade'
 Plugin 'lilydjwg/colorizer'
 
 " Color Scheme
-Bundle 'https://github.com/tomasr/molokai.git'
+Plugin 'tomasr/molokai'
 
 " Vim Snippets
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -62,27 +61,56 @@ Plugin 'honza/vim-snippets'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
 " Map jj to escape key to avoid pressing ESC
 :imap jj <Esc>
+
+" Molokai + Color edits
+colorscheme molokai
+let g:rehash256 = 1
+
+" Set Cursor Line Number Colors
+hi clear CursorLine
+hi CursorLineNR ctermfg=026 cterm=bold
+hi LineNr ctermbg=235
+augroup CLSet
+  autocmd! ColorScheme * hi clear CursorLine
+  autocmd! ColorScheme * hi CursorLineNR cterm=bold
+augroup END
+highlight LineNr ctermbg=black
+set cursorline
+
 " Required for airline to show up
 set laststatus=2
+
 " Set more natural splits
 set splitright
 set splitbelow
+
 " Nerdtree styled :Explore
-let g:netrw_liststyle=3
+" let g:netrw_liststyle=3
+
 " DelimitMate expanding
 let delimitMate_expand_cr = 1
 let delimitMate_expand_space = 1
+
 " Clear all trailling whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
+
 " Use ~/.vimrc.local if exists
 if filereadable(glob("~/.vimrc.local"))
-    source ~/.vimrc.local
+   source ~/.vimrc.local
 endif
+
+" Remove both scrollbars
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
+
+" Set NERDTree to :E
 cabbrev E NERDTree
+
+" Set .es6 files to use javascript syntax
 au BufNewFile,BufRead *.es6 set filetype=javascript
+
 " Change Modifier for Moving items up and down
 let g:move_key_modifier = 'C'
