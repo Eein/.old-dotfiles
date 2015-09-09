@@ -130,6 +130,13 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_sass_check_partials = 0
 let g:syntastic_error_symbol = "✗"
 let g:syntastic_warning_symbol = "⚠"
+let g:syntastic_style_warning_symbol = "✗"
+let g:syntastic_style_error_symbol = "✗"
+
+"syntastic_error_symbol - For syntax errors, defaults to '>>'
+"syntastic_style_error_symbol - For style errors, defaults to 'S>'
+"syntastic_warning_symbol - For syntax warnings, defaults to '>>'
+"syntastic_style_warning_symbol - For style warnings, defaults to 'S>'
 
 
 " Change Modifier for Moving items up and down
