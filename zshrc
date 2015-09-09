@@ -50,7 +50,6 @@ ZSH_THEME="robbyrussell"
 plugins=(git bundler brew git osx ruby rails zsh-syntax-highlighting)
 # User configuration
 export PATH="$HOME/.composer/vendor/bin:/Applications/MAMP/bin/php/php5.5.10/bin:/usr/local/Cellar/qt5/5.3.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/PostgreSQL/9.4/bin"
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh

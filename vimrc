@@ -49,7 +49,7 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-endwise' " Adds end to things that need it...
 
 " The nerdtree
-Plugin 'scrooloose/nerdtree'
+" Plugin 'scrooloose/nerdtree'
 " Laravel Blade Syntax
 Plugin 'xsbeats/vim-blade'
 Plugin 'lilydjwg/colorizer'
@@ -93,7 +93,7 @@ set splitright
 set splitbelow
 
 " Nerdtree styled :Explore
-" let g:netrw_liststyle=3
+let g:netrw_liststyle=3
 
 " DelimitMate expanding
 " let delimitMate_expand_cr = 1
@@ -112,7 +112,7 @@ set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
 
 " Set NERDTree to :E
-cabbrev E NERDTree
+" cabbrev E NERDTree
 
 " Set .es6 files to use javascript syntax
 au BufNewFile,BufRead *.es6 set filetype=javascript
@@ -128,6 +128,9 @@ let g:syntastic_scss_checkers = ["scss_lint"]
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_sass_check_partials = 0
+let g:syntastic_error_symbol = "✗"
+let g:syntastic_warning_symbol = "⚠"
+
 
 " Change Modifier for Moving items up and down
 let g:move_key_modifier = 'C'
