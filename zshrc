@@ -1,8 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/will/.oh-my-zsh
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -49,9 +47,10 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git bundler brew git osx ruby rails zsh-syntax-highlighting)
 # User configuration
-export PATH="$HOME/.rvm/bin:$HOME/.composer/vendor/bin:/Applications/MAMP/bin/php/php5.5.10/bin:/usr/local/Cellar/qt5/5.3.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/PostgreSQL/9.4/bin"
+export PATH="~/.rbenv/shims:$HOME/.composer/vendor/bin:/Applications/MAMP/bin/php/php5.5.10/bin:/usr/local/Cellar/qt5/5.3.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/PostgreSQL/9.4/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
+source ~/.rbenv/completions/rbenv.zsh
 source $ZSH/oh-my-zsh.sh
 
 # Custom Aliases
