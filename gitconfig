@@ -1,12 +1,1 @@
-[core]
-  editor = /usr/local/bin/nvim
-  excludesfile = ~/.gitignore
-[user]
-  name = William Volin
-  email = williamvolin@live.com
-[push]
-  default = simple
-[github]
-  user = eeinx
-[alias]
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+/Users/will/.dotfiles/gitconfig
