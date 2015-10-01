@@ -43,4 +43,4 @@ alias clr='clear'
 # For a full list of active aliases, run `alias`.
 
 alias lotus="noglob lotus"
-
+alias lg="log --oneline --decorate --graph"

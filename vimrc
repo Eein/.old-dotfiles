@@ -6,6 +6,24 @@ set guifont=Monaco:h16
 " turn on line numbers
 set number
 
+" Mapping Leaders
+map <Leader>vi :tabe $MYVIMRC<CR>
+map <Leader>so :source $MYVIMRC<CR>
+" Rspec Leaders
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>T :call RunAllSpecs()<CR>
+
+" Copy paste
+map <Leader>y "+y
+map <Leader>p "+p
+
+" Make 0 go to front of line
+nnoremap 0 ^
+
+
+" Fix Backspace
+set backspace=eol,start,indent
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 
@@ -42,11 +60,14 @@ Plugin 'matze/vim-move'
 "Plugin 'raimondi/delimitmate'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
 
 " Ruby / Rails specific plugins
 Plugin 'tpope/vim-rails'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-endwise' " Adds end to things that need it...
+Plugin 'thoughtbot/vim-rspec'
 
 " The nerdtree
 " Plugin 'scrooloose/nerdtree'
@@ -67,12 +88,16 @@ Plugin 'honza/vim-snippets'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" Map jj to escape key to avoid pressing ESC
-:imap jj <Esc>
-
 " Molokai + Color edits
 colorscheme molokai
 let g:rehash256 = 1
+
+" Map jj to escape key to avoid pressing ESC
+:imap jj <Esc>
+
+" Marks things passing 160 characters
+highlight ColorColumn ctermbg=magenta
+call matchadd('ColorColumn', '\%81v', 100)
 
 " Set Cursor Line Number Colors
 hi clear CursorLine
@@ -94,7 +119,7 @@ set splitbelow
 
 " Nerdtree styled :Explore
 let g:netrw_liststyle=3
-
+cabbrev E Explore
 " DelimitMate expanding
 " let delimitMate_expand_cr = 1
 " let delimitMate_expand_space = 1
@@ -111,9 +136,6 @@ endif
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
 
-" Set NERDTree to :E
-" cabbrev E NERDTree
-
 " Set .es6 files to use javascript syntax
 au BufNewFile,BufRead *.es6 set filetype=javascript
 
@@ -124,6 +146,7 @@ set statusline+=%*
 
 let g:syntastic_scss_checkers = ["scss_lint"]
 let g:syntastic_ruby_checkers=['rubocop', 'mri']
+let g:syntastic_ruby_rubocop_exec='~/.rbenv/shims/rubocop'
 let g:syntastic_eruby_ruby_quiet_messages = {'regex': 'possibly useless use of '}
 let g:syntastic_javascript_checkers=['eslint']
 "let g:syntastic_always_populate_loc_list = 1
