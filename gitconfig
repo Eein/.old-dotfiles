@@ -1,1 +1,10 @@
-/Users/will/.dotfiles/gitconfig
+[user]
+    name = William Volin
+    email = williamvolin@live.com
+[core]
+    editor = vim
+    excludesfile = ~/.gitignore
+[push]
+    default = simple
+[github]
+    user = eein

@@ -1,14 +1,27 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set nocompatible
+set hidden
+filetype off
 syntax enable
 set guifont=Monaco:h16
-
-" turn on line numbers
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+set hlsearch
+set mouse=a
 set number
+set title
+
+"Make 0 go to front of line
+nnoremap 0 ^
+nnoremap ' `
+nnoremap ` '
 
 " Mapping Leaders
 map <Leader>vi :tabe $MYVIMRC<CR>
 map <Leader>so :source $MYVIMRC<CR>
+map <Leader>i mmgg=G'm
+
 " Rspec Leaders
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>T :call RunAllSpecs()<CR>
@@ -17,35 +30,42 @@ map <Leader>T :call RunAllSpecs()<CR>
 map <Leader>y "+y
 map <Leader>p "+p
 
-" Make 0 go to front of line
-nnoremap 0 ^
-
-
 " Fix Backspace
 set backspace=eol,start,indent
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 
-" Set new file tabs, overrided by vim-sleuth
-set tabstop=4
-set shiftwidth=4
-set expandtab
-set hlsearch
-set mouse=a
 
-" test wild ignore case May 4th, 2015
+" Set ignore options
 if exists("&wildignorecase")
    set wildignorecase
 endif
+
+set wildmode=list:longest
+set wildmenu
+set wildignore=*.o,*.obj,*~
+set wildignore+=*vim/backups*
+set wildignore+=*sass-cache*
+set wildignore+=*DS_Store*
+set wildignore+=vendor/rails/**
+set wildignore+=vendor/cache/**
+set wildignore+=*.gem
+set wildignore+=log/**
+set wildignore+=tmp/**
+set wildignore+=*.cache
+set wildignore+=*.png,*.jpg,*.gif
 
 call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
+
+" Misc
 Plugin 'sheerun/vim-polyglot'
 Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-commentary'
 
 " Yells loudly at all of my habits
 Plugin 'scrooloose/syntastic'
@@ -57,6 +77,7 @@ Plugin 'cakebaker/scss-syntax.vim'
 
 " Moves lines up and down with cmd+j/k
 Plugin 'matze/vim-move'
+
 "Plugin 'raimondi/delimitmate'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-fugitive'
@@ -76,7 +97,9 @@ Plugin 'xsbeats/vim-blade'
 Plugin 'lilydjwg/colorizer'
 
 " Color Scheme
-Plugin 'tomasr/molokai'
+" Plugin 'tomasr/molokai'
+" Plugin 'trusktr/seti.vim'
+Plugin 'w0ng/vim-hybrid'
 
 " Vim Snippets
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -88,9 +111,11 @@ Plugin 'honza/vim-snippets'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" Molokai + Color edits
-colorscheme molokai
-let g:rehash256 = 1
+" Molokai + Color editor
+set background=dark
+colorscheme hybrid
+
+" let g:rehash256 = 1
 
 " Map jj to escape key to avoid pressing ESC
 :imap jj <Esc>
