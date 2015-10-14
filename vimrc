@@ -12,7 +12,7 @@ set mouse=a
 set number
 set title
 
-"Make 0 go to front of line
+" Better remaps
 nnoremap 0 ^
 nnoremap ' `
 nnoremap ` '
@@ -26,7 +26,7 @@ map <Leader>i mmgg=G'm
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>T :call RunAllSpecs()<CR>
 
-" Copy paste
+" Global copy paste
 map <Leader>y "+y
 map <Leader>p "+p
 
@@ -35,7 +35,6 @@ set backspace=eol,start,indent
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
-
 
 " Set ignore options
 if exists("&wildignorecase")
@@ -77,8 +76,6 @@ Plugin 'cakebaker/scss-syntax.vim'
 
 " Moves lines up and down with cmd+j/k
 Plugin 'matze/vim-move'
-
-"Plugin 'raimondi/delimitmate'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
@@ -90,15 +87,11 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-endwise' " Adds end to things that need it...
 Plugin 'thoughtbot/vim-rspec'
 
-" The nerdtree
-" Plugin 'scrooloose/nerdtree'
 " Laravel Blade Syntax
-Plugin 'xsbeats/vim-blade'
+" Plugin 'xsbeats/vim-blade'
 Plugin 'lilydjwg/colorizer'
 
 " Color Scheme
-" Plugin 'tomasr/molokai'
-" Plugin 'trusktr/seti.vim'
 Plugin 'w0ng/vim-hybrid'
 
 " Vim Snippets
@@ -145,9 +138,6 @@ set splitbelow
 " Nerdtree styled :Explore
 let g:netrw_liststyle=3
 cabbrev E Explore
-" DelimitMate expanding
-" let delimitMate_expand_cr = 1
-" let delimitMate_expand_space = 1
 
 " Clear all trailling whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
@@ -183,12 +173,6 @@ let g:syntastic_error_symbol = "✗"
 let g:syntastic_warning_symbol = "⚠"
 let g:syntastic_style_warning_symbol = "✗"
 let g:syntastic_style_error_symbol = "✗"
-
-"syntastic_error_symbol - For syntax errors, defaults to '>>'
-"syntastic_style_error_symbol - For style errors, defaults to 'S>'
-"syntastic_warning_symbol - For syntax warnings, defaults to '>>'
-"syntastic_style_warning_symbol - For style warnings, defaults to 'S>'
-
 
 " Change Modifier for Moving items up and down
 let g:move_key_modifier = 'C'
