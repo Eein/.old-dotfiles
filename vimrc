@@ -23,6 +23,7 @@ map <Leader>so :source $MYVIMRC<CR>
 map <Leader>i mmgg=G'm
 
 " Rspec Leaders
+let g:rspec_command = "!RAILS_ENV=test rspec --color {spec}"
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>T :call RunAllSpecs()<CR>
 
@@ -173,6 +174,7 @@ let g:syntastic_error_symbol = "✗"
 let g:syntastic_warning_symbol = "⚠"
 let g:syntastic_style_warning_symbol = "✗"
 let g:syntastic_style_error_symbol = "✗"
+hi MatchParen      ctermfg=033  ctermbg=234 cterm=bold
 
 " Change Modifier for Moving items up and down
 let g:move_key_modifier = 'C'
