@@ -61,6 +61,9 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
+" Crystal
+Plugin 'rhysd/vim-crystal'
+
 " Misc
 Plugin 'sheerun/vim-polyglot'
 Plugin 'bling/vim-airline'
@@ -88,6 +91,9 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-endwise' " Adds end to things that need it...
 Plugin 'thoughtbot/vim-rspec'
 
+" C++
+Plugin 'vim-scripts/a.vim'
+
 " Laravel Blade Syntax
 " Plugin 'xsbeats/vim-blade'
 Plugin 'lilydjwg/colorizer'
@@ -109,10 +115,11 @@ filetype plugin indent on    " required
 set background=dark
 colorscheme hybrid
 
-" let g:rehash256 = 1
-
 " Map jj to escape key to avoid pressing ESC
 :imap jj <Esc>
+
+" Fix Matching Parenths
+hi MatchParen      ctermfg=033  ctermbg=234 cterm=bold
 
 " Marks things passing 160 characters
 highlight ColorColumn ctermbg=magenta
@@ -155,16 +162,24 @@ set guioptions-=L  "remove left-hand scroll bar
 " Set .es6 files to use javascript syntax
 au BufNewFile,BufRead *.es6 set filetype=javascript
 
+" Set .cr files to use crystal syntax
+au BufNewFile,BufRead *.cr set filetype=crystal
+
 " Whiney Stuff - syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+
+" Crystal Settings
+let g:crystal_define_mappings = 0
+
+" Syntastic Settings
 let g:syntastic_scss_checkers = ["scss_lint"]
-let g:syntastic_ruby_checkers=['rubocop', 'mri']
-let g:syntastic_ruby_rubocop_exec='~/.rbenv/shims/rubocop'
+let g:syntastic_ruby_checkers = ['rubocop', 'mri']
+let g:syntastic_ruby_rubocop_exec ='~/.rbenv/shims/rubocop'
 let g:syntastic_eruby_ruby_quiet_messages = {'regex': 'possibly useless use of '}
-let g:syntastic_javascript_checkers=['eslint']
+let g:syntastic_javascript_checkers =['eslint']
 "let g:syntastic_always_populate_loc_list = 1
 "let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -174,7 +189,6 @@ let g:syntastic_error_symbol = "✗"
 let g:syntastic_warning_symbol = "⚠"
 let g:syntastic_style_warning_symbol = "✗"
 let g:syntastic_style_error_symbol = "✗"
-hi MatchParen      ctermfg=033  ctermbg=234 cterm=bold
 
 " Change Modifier for Moving items up and down
 let g:move_key_modifier = 'C'
