@@ -17,8 +17,18 @@ nnoremap 0 ^
 nnoremap ' `
 nnoremap ` '
 
+
+" Buffers
+map <C-H> :bprev<CR>
+map <C-L> :bnext<CR>
+
+" Remap wq and q to close buffer
+cnoreabbrev wq w<bar>bd
+cnoreabbrev <expr> q getcmdtype() == ":" && getcmdline() == 'q' ? 'bd' : 'q'
+autocmd BufDelete * if len(filter(range(1, bufnr('$')), '! empty(bufname(v:val)) && buflisted(v:val)')) == 1 | quit | endif
+
 " Mapping Leaders
-map <Leader>vi :tabe $MYVIMRC<CR>
+map <Leader>vi :e $MYVIMRC<CR>
 map <Leader>so :source $MYVIMRC<CR>
 map <Leader>i mmgg=G'm
 
@@ -93,6 +103,9 @@ Plugin 'thoughtbot/vim-rspec'
 
 " C++
 Plugin 'vim-scripts/a.vim'
+
+" React/JSX
+Plugin 'mxw/vim-jsx'
 
 " Laravel Blade Syntax
 " Plugin 'xsbeats/vim-blade'
@@ -170,9 +183,15 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+" React Settings
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files"
 
 " Crystal Settings
 let g:crystal_define_mappings = 0
+
+" Airline Settings
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
 
 " Syntastic Settings
 let g:syntastic_scss_checkers = ["scss_lint"]
