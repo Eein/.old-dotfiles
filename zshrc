@@ -17,18 +17,4 @@ source $ZSH/oh-my-zsh.sh
 alias clr='clear'
 alias lotus="noglob lotus"
 alias lg="log --oneline --decorate --graph"
-
-gitgood() {
-  if ! [[ $1 = '' ]] then
-    if [[ `git branch --list $1` ]] then
-      git fetch
-      git rebase -i origin/master
-      git push --force
-      git checkout master
-      git merge $1
-      git push origin master
-      git push origin :$1
-      git branch -d $1
-    fi
-  fi
-}
+alias rs="rails server -b $(ifconfig | grep -o '\s192.168.[0-9]\{1,3\}.[0-9]\{1,3\}\s')"
