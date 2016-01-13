@@ -1,0 +1,10 @@
+#!/usr/bin/osascript
+set track_output to ""
+tell application "Spotify"
+  set currentArtist to artist of current track as string
+  set currentTrack to name of current track as string
+  set track_colors to "#[bg=black]#[fg=white] ♫ #[fg=colour026]"
+  set track_output to track_colors & currentTrack & " - " & currentArtist
+
+end tell
+return track_output

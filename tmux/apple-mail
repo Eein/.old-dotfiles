@@ -1,0 +1,13 @@
+#!/usr/bin/osascript
+set output_string to ""
+tell application "Mail"
+    set mail_count to unread count of inbox
+    if mail_count > 0
+       set status to "#[bg=white]#[fg=red] ✉ "
+       set output_string to status & mail_count & " "
+    else
+       set status to "#[bg=black]#[fg=green] ✉"
+       set output_string to status
+    end if
+end tell
+return output_string
