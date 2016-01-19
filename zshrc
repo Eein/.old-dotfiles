@@ -19,5 +19,6 @@ alias lotus="noglob lotus"
 alias lg="log --oneline --decorate --graph"
 alias rs="rails server -b $(ifconfig | grep -o '\s192.168.[0-9]\{1,3\}.[0-9]\{1,3\}\s')"
 alias dumpsterswap="rm -i `find . | grep .swp$`"
+alias vim='nvim'
 
 # eval "$(docker-machine env default)"

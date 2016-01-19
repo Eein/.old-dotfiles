@@ -23,13 +23,13 @@ map <C-H> :bprev<CR>
 map <C-L> :bnext<CR>
 
 " Remap wq and q to close buffer
-cnoreabbrev wq w<bar>bd
-cnoreabbrev <expr> q getcmdtype() == ":" && getcmdline() == 'q' ? 'bd' : 'q'
-autocmd BufDelete * if len(filter(range(1, bufnr('$')), '! empty(bufname(v:val)) && buflisted(v:val)')) == 1 | quit | endif
+" cnoreabbrev wq w<bar>bd
+" cnoreabbrev <expr> q getcmdtype() == ":" && getcmdline() == 'q' ? 'bd' : 'q'
+" autocmd BufDelete * if len(filter(range(1, bufnr('$')), '! empty(bufname(v:val)) && buflisted(v:val)')) == 1 | quit | endif
 
 " Mapping Leaders
-map <Leader>vi :e $MYVIMRC<CR>
-map <Leader>so :source $MYVIMRC<CR>
+map <Leader>vi :e ~/.vimrc<CR>
+map <Leader>so :source ~/.vimrc<CR>
 map <Leader>i mmgg=G'm
 
 " Rspec Leaders
@@ -58,6 +58,7 @@ set wildignore=*.o,*.obj,*~
 set wildignore+=*vim/backups*
 set wildignore+=*sass-cache*
 set wildignore+=*DS_Store*
+set wildignore+=*node_modules*
 set wildignore+=vendor/rails/**
 set wildignore+=vendor/cache/**
 set wildignore+=*.gem
@@ -71,17 +72,11 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-" Crystal
-Plugin 'rhysd/vim-crystal'
-
 " Misc
 Plugin 'sheerun/vim-polyglot'
 Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-commentary'
-
-" Yells loudly at all of my habits
-Plugin 'scrooloose/syntastic'
 
 " Multiple Word Selection using Ctrl+n
 Plugin 'terryma/vim-multiple-cursors'
@@ -101,24 +96,16 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-endwise' " Adds end to things that need it...
 Plugin 'thoughtbot/vim-rspec'
 
-" C++
-Plugin 'vim-scripts/a.vim'
-
-" React/JSX
-Plugin 'mxw/vim-jsx'
-
-" Laravel Blade Syntax
-" Plugin 'xsbeats/vim-blade'
-Plugin 'lilydjwg/colorizer'
-
 " Color Scheme
 Plugin 'w0ng/vim-hybrid'
+Plugin 'lilydjwg/colorizer'
 
 " Vim Snippets
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
+Plugin 'benekastah/neomake'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -162,11 +149,8 @@ cabbrev E Explore
 
 " Clear all trailling whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
-
-" Use ~/.vimrc.local if exists
-if filereadable(glob("~/.vimrc.local"))
-   source ~/.vimrc.local
-endif
+autocmd! BufWritePost * Neomake
+autocmd! BufRead * Neomake
 
 " Remove both scrollbars
 set guioptions-=r  "remove right-hand scroll bar
@@ -175,39 +159,9 @@ set guioptions-=L  "remove left-hand scroll bar
 " Set .es6 files to use javascript syntax
 au BufNewFile,BufRead *.es6 set filetype=javascript
 
-" Set .cr files to use crystal syntax
-au BufNewFile,BufRead *.cr set filetype=crystal
-
-" Whiney Stuff - syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-" React Settings
-let g:jsx_ext_required = 0 " Allow JSX in normal JS files"
-
-" Crystal Settings
-let g:crystal_define_mappings = 0
-
 " Airline Settings
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
-
-" Syntastic Settings
-let g:syntastic_scss_checkers = ["scss_lint"]
-let g:syntastic_ruby_checkers = ['rubocop', 'mri']
-let g:syntastic_ruby_rubocop_exec ='~/.rbenv/shims/rubocop'
-let g:syntastic_eruby_ruby_quiet_messages = {'regex': 'possibly useless use of '}
-let g:syntastic_javascript_checkers =['eslint']
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-" let g:syntastic_sass_check_partials = 0
-let g:syntastic_error_symbol = "✗"
-let g:syntastic_warning_symbol = "⚠"
-let g:syntastic_style_warning_symbol = "✗"
-let g:syntastic_style_error_symbol = "✗"
 
 " Change Modifier for Moving items up and down
 let g:move_key_modifier = 'C'
