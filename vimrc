@@ -22,9 +22,9 @@ map <C-H> :bprev<CR>
 map <C-L> :bnext<CR>
 
 " Remap wq and q to close buffer
-" cnoreabbrev wq w<bar>bd
+cnoreabbrev wq w<bar>bd
 " cnoreabbrev <expr> q getcmdtype() == ":" && getcmdline() == 'q' ? 'bd' : 'q'
-" autocmd BufDelete * if len(filter(range(1, bufnr('$')), '! empty(bufname(v:val)) && buflisted(v:val)')) == 1 | quit | endif
+autocmd BufDelete * if len(filter(range(1, bufnr('$')), '! empty(bufname(v:val)) && buflisted(v:val)')) == 1 | quit | endif
 
 " Mapping Leaders
 map <Leader>vi :e ~/.vimrc<CR>
@@ -99,6 +99,9 @@ Plugin 'thoughtbot/vim-rspec'
 Plugin 'w0ng/vim-hybrid'
 Plugin 'lilydjwg/colorizer'
 
+" Support for Twig
+Plugin 'Glench/Vim-Jinja2-Syntax'
+
 " Vim Snippets
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
@@ -157,6 +160,9 @@ set guioptions-=L  "remove left-hand scroll bar
 
 " Set .es6 files to use javascript syntax
 au BufNewFile,BufRead *.es6 set filetype=javascript
+
+" Set .twig files to jinja2 (only way)
+au BufRead,BufNewFile *.twig set filetype=jinja
 
 " Airline Settings
 let g:airline#extensions#tabline#enabled = 1
