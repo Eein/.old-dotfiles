@@ -17,7 +17,6 @@ nnoremap 0 ^
 nnoremap ' `
 nnoremap ` '
 
-
 " Buffers
 map <C-H> :bprev<CR>
 map <C-L> :bnext<CR>
