@@ -170,7 +170,7 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 
 " Change Modifier for Moving items up and down
 let g:move_key_modifier = 'C'
-let g:neomake_javascript_enabled_makers = ['standard']
-let g:neomake_js_enabled_makers = ['standard']
-let g:neomake_jsx_enabled_makers = ['standard']
+let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_js_enabled_makers = ['eslint']
+let g:neomake_jsx_enabled_makers = ['eslint']
 let g:neomake_ruby_enabled_makers = ['rubocop']
