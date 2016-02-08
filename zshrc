@@ -3,7 +3,7 @@ export ZSH=~/.oh-my-zsh
 
 ZSH_THEME="robbyrussell"
 
-plugins=(git bundler brew git osx ruby rails)
+# plugins=(nope)
 
 # User configuration
 export PATH="$HOME/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.composer/vendor/bin"
@@ -17,8 +17,13 @@ source $ZSH/oh-my-zsh.sh
 alias clr='clear'
 alias lotus="noglob lotus"
 alias lg="log --oneline --decorate --graph"
-alias rs="rails server -b $(ifconfig | grep -o '\s192.168.[0-9]\{1,3\}.[0-9]\{1,3\}\s')"
-alias dumpsterswap="rm -i `find . | grep .swp$`"
 alias vim='nvim'
+alias flushdns='sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder;say flushed '
+
+
+function rs {
+  rails server -b $(ifconfig | grep -o '\s192.168.[0-9]\{1,3\}.[0-9]\{1,3\}\s')
+}
+
 
 # eval "$(docker-machine env default)"
