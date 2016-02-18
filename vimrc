@@ -1,4 +1,3 @@
-set nocompatible
 set hidden
 filetype off
 syntax enable
@@ -103,11 +102,11 @@ Plugin 'lilydjwg/colorizer'
 Plugin 'Glench/Vim-Jinja2-Syntax'
 
 " Vim Snippets
+Plugin 'benekastah/neomake'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
-Plugin 'benekastah/neomake'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
