@@ -17,4 +17,6 @@ function rs {
   rails server -b $(ifconfig | grep -o '\s192.168.[0-9]\{1,3\}.[0-9]\{1,3\}\s')
 }
 
-# eval "$(docker-machine env default)"
+alias flushdns='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder; echo DNS cache flushed'
+
+eval "$(docker-machine env default)"
