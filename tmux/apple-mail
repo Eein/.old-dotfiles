@@ -1,5 +1,7 @@
 #!/usr/bin/osascript
 set output_string to ""
+if application "Mail" is running then
+
 tell application "Mail"
     set mail_count to unread count of inbox
     if mail_count > 0
@@ -11,3 +13,5 @@ tell application "Mail"
     end if
 end tell
 return output_string
+
+end if
