@@ -21,12 +21,12 @@ map <C-H> :bprev<CR>
 map <C-L> :bnext<CR>
 
 " Remap wq and q to close buffer
-cnoreabbrev wq w<bar>bd
+cnoreabbrev wq w<bar>BD
 " cnoreabbrev <expr> q getcmdtype() == ":" && getcmdline() == 'q' ? 'bd' : 'q'
 autocmd BufDelete * if len(filter(range(1, bufnr('$')), '! empty(bufname(v:val)) && buflisted(v:val)')) == 1 | quit | endif
 
 " Mapping Leaders
-map <Leader>vi :e ~/.vimrc<CR>
+map <Leader>vi :e ~/.dotfiles/vimrc<CR>
 map <Leader>so :source ~/.vimrc<CR>
 map <Leader>i mmgg=G'm
 
@@ -65,56 +65,61 @@ set wildignore+=tmp/**
 set wildignore+=*.cache
 set wildignore+=*.png,*.jpg,*.gif
 
-call vundle#begin()
+" https://github.com/junegunn/vim-plug
+call plug#begin('~/.nvim/plugged')
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+Plug 'gmarik/Vundle.vim'
 
 " Misc
-Plugin 'sheerun/vim-polyglot' " Fix for weird comment issue: https://github.com/othree/yajs.vim/commit/b069d90bc41f9f21ccad1e918262bf992d2aa75f
-Plugin 'bling/vim-airline'
-Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-dispatch'
-Plugin 'jgdavey/tslime.vim'
+Plug 'sheerun/vim-polyglot' " Fix for weird comment issue: https://github.com/othree/yajs.vim/commit/b069d90bc41f9f21ccad1e918262bf992d2aa75f
+Plug 'bling/vim-airline'
+Plug 'kien/ctrlp.vim'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-dispatch'
+Plug 'jgdavey/tslime.vim'
 
 " Multiple Word Selection using Ctrl+n
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'tpope/vim-sleuth'
-Plugin 'cakebaker/scss-syntax.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-sleuth'
+Plug 'cakebaker/scss-syntax.vim'
 
 " Moves lines up and down with cmd+j/k
-Plugin 'matze/vim-move'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-repeat'
+Plug 'matze/vim-move'
 
-" Ruby / Rails specific plugins
-Plugin 'tpope/vim-rails'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-endwise' " Adds end to things that need it...
-Plugin 'thoughtbot/vim-rspec'
+" QOL
+Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'qpkorr/vim-bufkill'
+
+" Ruby / Rails specific Plugs
+Plug 'tpope/vim-rails'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-endwise' " Adds end to things that need it...
+Plug 'thoughtbot/vim-rspec'
 
 " Color Scheme
-Plugin 'w0ng/vim-hybrid'
-Plugin 'lilydjwg/colorizer'
+Plug 'w0ng/vim-hybrid'
+Plug 'lilydjwg/colorizer'
 
 " Support for Twig
-Plugin 'Glench/Vim-Jinja2-Syntax'
+Plug 'Glench/Vim-Jinja2-Syntax'
 
 " react
-Plugin 'mxw/vim-jsx'
+Plug 'mxw/vim-jsx'
 
 " Vim Snippets
-Plugin 'benekastah/neomake'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
+Plug 'benekastah/neomake'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
+call plug#end()            " required
+
 filetype plugin indent on    " required
 
 " Molokai + Color editor
