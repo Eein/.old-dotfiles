@@ -75,6 +75,8 @@ Plugin 'sheerun/vim-polyglot' " Fix for weird comment issue: https://github.com/
 Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-dispatch'
+Plugin 'jgdavey/tslime.vim'
 
 " Multiple Word Selection using Ctrl+n
 Plugin 'terryma/vim-multiple-cursors'
@@ -167,6 +169,8 @@ au BufNewFile,BufRead *.es6 set filetype=javascript
 au BufRead,BufNewFile *.twig set filetype=jinja
 au BufRead,BufNewFile *.html set filetype=jinja
 
+" Markdown Livereload in ectodown
+autocmd FileType markdown let b:dispatch = 'octodown --live-reload %'
 
 " Airline Settings
 let g:airline#extensions#tabline#enabled = 1
@@ -182,3 +186,6 @@ let g:neomake_html_enabled_makers = []
 
 " React
 let g:jsx_ext_required = 0
+
+" Send tests to new tmux window
+let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
