@@ -117,6 +117,9 @@ Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
 
+" Nyaovim Plugs
+Plug 'rhysd/nyaovim-markdown-preview'
+
 " All of your Plugins must be added before the following line
 call plug#end()            " required
 
@@ -194,3 +197,11 @@ let g:jsx_ext_required = 0
 
 " Send tests to new tmux window
 let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
+
+" Nayovim Eager Update
+let g:markdown_preview_eager = 1
+
+nmap <buffer><silent><Leader>j <Plug>(markdown-preview-scroll-down) <Plug>(markdown-preview-scroll-down) <Plug>(markdown-preview-scroll-down)
+nmap <buffer><silent><Leader>k <Plug>(markdown-preview-scroll-up) <Plug>(markdown-preview-scroll-up) <Plug>(markdown-preview-scroll-up)
+
+
