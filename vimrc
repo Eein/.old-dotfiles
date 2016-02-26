@@ -71,7 +71,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Misc
-Plugin 'sheerun/vim-polyglot'
+Plugin 'sheerun/vim-polyglot' " Fix for weird comment issue: https://github.com/othree/yajs.vim/commit/b069d90bc41f9f21ccad1e918262bf992d2aa75f
 Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-commentary'
@@ -100,6 +100,9 @@ Plugin 'lilydjwg/colorizer'
 
 " Support for Twig
 Plugin 'Glench/Vim-Jinja2-Syntax'
+
+" react
+Plugin 'mxw/vim-jsx'
 
 " Vim Snippets
 Plugin 'benekastah/neomake'
@@ -162,6 +165,8 @@ au BufNewFile,BufRead *.es6 set filetype=javascript
 
 " Set .twig files to jinja2 (only way)
 au BufRead,BufNewFile *.twig set filetype=jinja
+au BufRead,BufNewFile *.html set filetype=jinja
+
 
 " Airline Settings
 let g:airline#extensions#tabline#enabled = 1
@@ -174,3 +179,6 @@ let g:neomake_js_enabled_makers = ['eslint']
 let g:neomake_jsx_enabled_makers = ['eslint']
 let g:neomake_ruby_enabled_makers = ['rubocop']
 let g:neomake_html_enabled_makers = []
+
+" React
+let g:jsx_ext_required = 0
