@@ -19,4 +19,4 @@ function rs {
 
 alias flushdns='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder; echo DNS cache flushed'
 
-eval "$(docker-machine env default)"
+# eval "$(docker-machine env default)"
