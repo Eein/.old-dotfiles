@@ -12,6 +12,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Custom Aliases
 alias vim='nvim'
+alias sudo='sudo '
 
 function rs {
   rails server -b $(ifconfig | grep -o '\s192.168.[0-9]\{1,3\}.[0-9]\{1,3\}\s')
