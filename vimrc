@@ -1,5 +1,5 @@
-set hidden
 filetype off
+set hidden
 syntax enable
 set guifont=Monaco:h16
 set tabstop=2
@@ -31,7 +31,6 @@ map <Leader>so :source ~/.vimrc<CR>
 map <Leader>i mmgg=G'm
 
 " Rspec Leaders
-let g:rspec_command = "!RAILS_ENV=test rspec --color {spec}"
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>T :call RunAllSpecs()<CR>
 
@@ -67,60 +66,57 @@ set wildignore+=*.png,*.jpg,*.gif
 
 " https://github.com/junegunn/vim-plug
 call plug#begin('~/.nvim/plugged')
-
-" let Vundle manage Vundle, required
-Plug 'gmarik/Vundle.vim'
-
-" Misc
+"
+"" Misc
 Plug 'sheerun/vim-polyglot' " Fix for weird comment issue: https://github.com/othree/yajs.vim/commit/b069d90bc41f9f21ccad1e918262bf992d2aa75f
 Plug 'bling/vim-airline'
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'jgdavey/tslime.vim'
-
-" Multiple Word Selection using Ctrl+n
+"
+"" Multiple Word Selection using Ctrl+n
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-sleuth'
 Plug 'cakebaker/scss-syntax.vim'
-
-" Moves lines up and down with cmd+j/k
+"
+"" Moves lines up and down with cmd+j/k
 Plug 'matze/vim-move'
-
-" QOL
+"
+"" QOL
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'qpkorr/vim-bufkill'
-
-" Ruby / Rails specific Plugs
+"
+"" Ruby / Rails specific Plugs
 Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-endwise' " Adds end to things that need it...
 Plug 'thoughtbot/vim-rspec'
-
-" Color Scheme
+"
+"" Color Scheme
 Plug 'w0ng/vim-hybrid'
-Plug 'lilydjwg/colorizer'
+Plug 'gorodinskiy/vim-coloresque'
 
-" Support for Twig
+"" Support for Twig
 Plug 'Glench/Vim-Jinja2-Syntax'
-
-" react
+"
+"" react
 Plug 'mxw/vim-jsx'
-
-" Vim Snippets
+"
+"" Vim Snippets
 Plug 'benekastah/neomake'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'
-
-" Nyaovim Plugs
+"
+"" Nyaovim Plugs
 Plug 'rhysd/nyaovim-markdown-preview'
-
-" All of your Plugins must be added before the following line
+"
+"" All of your Plugins must be added before the following line
 call plug#end()            " required
 
 filetype plugin indent on    " required
@@ -151,7 +147,7 @@ highlight LineNr ctermbg=black
 set cursorline
 
 " Required for airline to show up
-set laststatus=2
+" set laststatus=2
 
 " Set more natural splits
 set splitright
@@ -177,9 +173,6 @@ au BufNewFile,BufRead *.es6 set filetype=javascript
 au BufRead,BufNewFile *.twig set filetype=jinja
 au BufRead,BufNewFile *.html set filetype=jinja
 
-" Markdown Livereload in ectodown
-autocmd FileType markdown let b:dispatch = 'octodown --live-reload %'
-
 " Airline Settings
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
@@ -203,5 +196,3 @@ let g:markdown_preview_eager = 1
 
 nmap <buffer><silent><Leader>j <Plug>(markdown-preview-scroll-down) <Plug>(markdown-preview-scroll-down) <Plug>(markdown-preview-scroll-down)
 nmap <buffer><silent><Leader>k <Plug>(markdown-preview-scroll-up) <Plug>(markdown-preview-scroll-up) <Plug>(markdown-preview-scroll-up)
-
-
