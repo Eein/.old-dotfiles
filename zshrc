@@ -19,4 +19,8 @@ function rs {
 
 alias flushdns='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder; echo DNS cache flushed'
 
+# Fix backspace in nvim
+infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > ~/$TERM.ti
+tic ~/$TERM.ti
+
 # eval "$(docker-machine env default)"
