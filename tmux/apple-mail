@@ -1,8 +1,8 @@
 #!/usr/bin/osascript
 set output_string to ""
-if application "Mail" is running then
+if application "Outlook" is running then
 
-tell application "Mail"
+tell application "Outlook"
     set mail_count to unread count of inbox
     if mail_count > 0
        set status to "#[bg=white]#[fg=red] ✉ "

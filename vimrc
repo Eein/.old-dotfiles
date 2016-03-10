@@ -98,7 +98,6 @@ Plug 'thoughtbot/vim-rspec'
 "
 "" Color Scheme
 Plug 'w0ng/vim-hybrid'
-Plug 'gorodinskiy/vim-coloresque'
 
 "" Support for Twig
 Plug 'Glench/Vim-Jinja2-Syntax'
