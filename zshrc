@@ -10,12 +10,14 @@ export PATH="$HOME/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HO
 
 source $ZSH/oh-my-zsh.sh
 
+export EDITOR='nvim'
+
 # Custom Aliases
 alias vim='nvim'
 alias sudo='sudo '
 
 function rs {
-  rails server -b $(ifconfig | grep -o '\s192.168.[0-9]\{1,3\}.[0-9]\{1,3\}\s')
+  rails server -b $(ifconfig | grep -o '\s192.168.1\{1,3\}.[0-9]\{1,3\}\s')
 }
 
 alias flushdns='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder; echo DNS cache flushed'
