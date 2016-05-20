@@ -98,6 +98,7 @@ Plug 'thoughtbot/vim-rspec'
 "
 "" Color Scheme
 Plug 'w0ng/vim-hybrid'
+Plug 'ap/vim-css-color'
 
 "" Support for Twig
 Plug 'Glench/Vim-Jinja2-Syntax'
@@ -183,6 +184,7 @@ let g:neomake_js_enabled_makers = ['eslint']
 let g:neomake_jsx_enabled_makers = ['eslint']
 let g:neomake_ruby_enabled_makers = ['rubocop']
 let g:neomake_html_enabled_makers = []
+let g:neomake_scss_scsslint_args = ['-c', '~/.scss-lint.yml']
 
 " React
 let g:jsx_ext_required = 0
