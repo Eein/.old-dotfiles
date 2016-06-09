@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
-ZSH_THEME="robbyrussell"
+ZSH_THEME='gozilla'
 
 # plugins=(nope)
 
@@ -25,5 +25,3 @@ alias flushdns='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder; e
 # Fix backspace in nvim
 infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > ~/$TERM.ti
 tic ~/$TERM.ti
-
-# eval "$(docker-machine env default)"

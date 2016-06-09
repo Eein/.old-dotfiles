@@ -1,7 +1,7 @@
 filetype off
 set hidden
 syntax enable
-set guifont=Monaco:h16
+set guifont=Monaco:h14
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
@@ -74,7 +74,9 @@ Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'jgdavey/tslime.vim'
-"
+
+"" C++
+Plug 'vim-scripts/a.vim'
 "" Multiple Word Selection using Ctrl+n
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-sleuth'
@@ -95,7 +97,7 @@ Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-endwise' " Adds end to things that need it...
 Plug 'thoughtbot/vim-rspec'
-"
+
 "" Color Scheme
 Plug 'w0ng/vim-hybrid'
 Plug 'ap/vim-css-color'
@@ -107,7 +109,7 @@ Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'mxw/vim-jsx'
 "
 "" Vim Snippets
-Plug 'benekastah/neomake'
+Plug 'Eein/neomake'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
@@ -185,6 +187,18 @@ let g:neomake_jsx_enabled_makers = ['eslint']
 let g:neomake_ruby_enabled_makers = ['rubocop']
 let g:neomake_html_enabled_makers = []
 let g:neomake_scss_scsslint_args = ['-c', '~/.scss-lint.yml']
+
+
+let g:neomake_elixir_mix_maker = {
+      \ 'exe' : 'mix',
+      \ 'args': ['compile', '--warnings-as-errors'],
+      \ 'cwd': getcwd(),
+      \ 'errorformat':
+        \ '** %s %f:%l: %m,' .
+        \ '%f:%l: warning: %m'
+      \ }
+
+let g:neomake_elixir_enabled_makers = ['mix']
 
 " React
 let g:jsx_ext_required = 0
