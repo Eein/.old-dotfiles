@@ -204,7 +204,7 @@ let g:neomake_elixir_enabled_makers = ['mix']
 let g:jsx_ext_required = 0
 
 " Send tests to new tmux window
-let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
+let g:rspec_command = 'call Send_to_Tmux("bundle exec rspec {spec}\n")'
 
 " Nayovim Eager Update
 let g:markdown_preview_eager = 1
