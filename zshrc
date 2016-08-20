@@ -25,3 +25,6 @@ alias flushdns='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder; e
 # Fix backspace in nvim
 infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > ~/$TERM.ti
 tic ~/$TERM.ti
+
+# Source API keys
+source ~/.api
