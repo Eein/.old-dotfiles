@@ -109,7 +109,7 @@ Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'mxw/vim-jsx'
 "
 "" Vim Snippets
-Plug 'Eein/neomake'
+Plug 'neomake/neomake'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
@@ -117,6 +117,8 @@ Plug 'honza/vim-snippets'
 "
 "" Nyaovim Plugs
 Plug 'rhysd/nyaovim-markdown-preview'
+"" Standard Config
+Plug 'editorconfig/editorconfig-vim'
 "
 "" All of your Plugins must be added before the following line
 call plug#end()            " required
@@ -205,6 +207,7 @@ let g:jsx_ext_required = 0
 
 " Send tests to new tmux window
 let g:rspec_command = 'call Send_to_Tmux("bundle exec rspec {spec}\n")'
+noremap <leader>e :!elixir %:p<CR>
 
 " Nayovim Eager Update
 let g:markdown_preview_eager = 1
