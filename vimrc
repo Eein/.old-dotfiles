@@ -75,8 +75,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'jgdavey/tslime.vim'
 
-"" C++
-Plug 'vim-scripts/a.vim'
 "" Multiple Word Selection using Ctrl+n
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-sleuth'
