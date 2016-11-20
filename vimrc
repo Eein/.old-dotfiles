@@ -22,6 +22,7 @@ map <C-L> :bnext<CR>
 
 " Remap wq and q to close buffer
 cnoreabbrev wq w<bar>BD
+
 " cnoreabbrev <expr> q getcmdtype() == ":" && getcmdline() == 'q' ? 'bd' : 'q'
 autocmd BufDelete * if len(filter(range(1, bufnr('$')), '! empty(bufname(v:val)) && buflisted(v:val)')) == 1 | quit | endif
 
@@ -31,8 +32,12 @@ map <Leader>so :source ~/.vimrc<CR>
 map <Leader>i mmgg=G'm
 
 " Rspec Leaders
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>T :call RunAllSpecs()<CR>
+autocmd Filetype ruby map <Leader>t :call RunCurrentSpecFile()<CR>
+autocmd Filetype ruby map <Leader>T :call RunAllSpecs()<CR>
+
+" Elixir Leaders
+autocmd BufRead,BufNewFile *.{exs} setlocal filetype=exunit
+autocmd FileType exunit map <leader>t :call Send_to_Tmux("mix test ". expand('%:p') ."\n")<CR>
 
 " Global copy paste
 map <Leader>y "+y
@@ -79,17 +84,17 @@ Plug 'jgdavey/tslime.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-sleuth'
 Plug 'cakebaker/scss-syntax.vim'
-"
+
 "" Moves lines up and down with cmd+j/k
 Plug 'matze/vim-move'
-"
+
 "" QOL
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'qpkorr/vim-bufkill'
-"
+
 "" Ruby / Rails specific Plugs
 Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
