@@ -1,9 +1,9 @@
 [user]
     name = William Volin
-    email = williamvolin@live.com
+    email = me@williamvolin.com
 [core]
     editor = nvim
-    excludesfile = ~/.gitignore
+	excludesfile = /Users/eein/.global_ignore
 [push]
     default = simple
 [github]

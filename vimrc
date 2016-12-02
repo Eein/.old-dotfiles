@@ -32,6 +32,7 @@ map <Leader>so :source ~/.vimrc<CR>
 map <Leader>i mmgg=G'm
 
 " Rspec Leaders
+autocmd BufRead,BufNewFile *.{rb} setlocal filetype=ruby
 autocmd Filetype ruby map <Leader>t :call RunCurrentSpecFile()<CR>
 autocmd Filetype ruby map <Leader>T :call RunAllSpecs()<CR>
 
@@ -211,9 +212,3 @@ let g:jsx_ext_required = 0
 " Send tests to new tmux window
 let g:rspec_command = 'call Send_to_Tmux("bundle exec rspec {spec}\n")'
 noremap <leader>e :!elixir %:p<CR>
-
-" Nayovim Eager Update
-let g:markdown_preview_eager = 1
-
-nmap <buffer><silent><Leader>j <Plug>(markdown-preview-scroll-down) <Plug>(markdown-preview-scroll-down) <Plug>(markdown-preview-scroll-down)
-nmap <buffer><silent><Leader>k <Plug>(markdown-preview-scroll-up) <Plug>(markdown-preview-scroll-up) <Plug>(markdown-preview-scroll-up)
