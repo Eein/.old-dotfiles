@@ -3,6 +3,10 @@ infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > $TERM.ti
 tic $TERM.ti
 # you can remove the generate file.
 
+# Emacs
+# brew install emacs
+# in iterm2, left option needs to become +ESC in profile
+
 # Homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 # zsh
