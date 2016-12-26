@@ -3,7 +3,7 @@
     email = me@williamvolin.com
 [core]
     editor = nvim
-	excludesfile = /Users/eein/.global_ignore
+    excludesfile = /Users/eein/.global_ignore
 [push]
     default = simple
 [github]
