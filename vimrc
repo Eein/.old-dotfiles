@@ -91,9 +91,11 @@ Plug 'matze/vim-move'
 
 "" QOL
 Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+
+" Git
+Plug 'tpope/vim-fugitive'
 Plug 'qpkorr/vim-bufkill'
 
 "" Ruby / Rails specific Plugs
@@ -102,28 +104,19 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-endwise' " Adds end to things that need it...
 Plug 'thoughtbot/vim-rspec'
 
+"" Elixir
+Plug 'slashmili/alchemist.vim'
+
+"" react
+Plug 'chemzqm/vim-jsx-improve'
+
 "" Color Scheme
 Plug 'w0ng/vim-hybrid'
-Plug 'ap/vim-css-color'
 
-"" Support for Twig
-Plug 'Glench/Vim-Jinja2-Syntax'
-"
-"" react
-Plug 'mxw/vim-jsx'
-"
 "" Vim Snippets
 Plug 'neomake/neomake'
 Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
-Plug 'garbas/vim-snipmate'
-Plug 'honza/vim-snippets'
-"
-"" Nyaovim Plugs
-Plug 'rhysd/nyaovim-markdown-preview'
-"" Standard Config
-Plug 'editorconfig/editorconfig-vim'
-"
+
 "" All of your Plugins must be added before the following line
 call plug#end()            " required
 
@@ -187,6 +180,8 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 
 " Change Modifier for Moving items up and down
 let g:move_key_modifier = 'C'
+let g:deoplete#enable_at_startup = 1
+
 let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_js_enabled_makers = ['eslint']
 let g:neomake_jsx_enabled_makers = ['eslint']
@@ -194,15 +189,14 @@ let g:neomake_ruby_enabled_makers = ['rubocop']
 let g:neomake_html_enabled_makers = []
 let g:neomake_scss_scsslint_args = ['-c', '~/.scss-lint.yml']
 
-
-let g:neomake_elixir_mix_maker = {
-      \ 'exe' : 'mix',
-      \ 'args': ['compile', '--warnings-as-errors'],
-      \ 'cwd': getcwd(),
-      \ 'errorformat':
-        \ '** %s %f:%l: %m,' .
-        \ '%f:%l: warning: %m'
-      \ }
+" let g:neomake_elixir_mix_maker = {
+"       \ 'exe' : 'mix',
+"       \ 'args': ['compile', '--warnings-as-errors'],
+"       \ 'cwd': getcwd(),
+"       \ 'errorformat':
+"         \ '** %s %f:%l: %m,' .
+"         \ '%f:%l: warning: %m'
+"       \ }
 
 let g:neomake_elixir_enabled_makers = ['mix']
 

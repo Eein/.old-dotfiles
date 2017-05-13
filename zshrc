@@ -6,7 +6,7 @@ ZSH_THEME='eein'
 # plugins=(nope)
 
 # User configuration
-export PATH="$HOME/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.composer/vendor/bin"
+export PATH="$HOME/.composer/vendor/bin:$HOME/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.composer/vendor/bin"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -25,6 +25,12 @@ alias flushdns='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder; e
 # Fix backspace in nvim
 # infocmp $TERM | sed 's/kbs=^[hH]/kbs=\\177/' > ~/$TERM.ti
 tic ~/$TERM.ti
+
+
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
+
+export PATH="$(yarn global bin):$PATH"
 
 # Source API keys
 source ~/.api
