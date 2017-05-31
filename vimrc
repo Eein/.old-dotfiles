@@ -67,6 +67,7 @@ set wildignore+=vendor/cache/**
 set wildignore+=*.gem
 set wildignore+=log/**
 set wildignore+=tmp/**
+set wildignore+=*/.git/*,*/tmp/*,*.swp
 set wildignore+=*.cache
 set wildignore+=*.png,*.jpg,*.gif
 
@@ -76,6 +77,7 @@ call plug#begin('~/.nvim/plugged')
 "" Misc
 Plug 'sheerun/vim-polyglot' " Fix for weird comment issue: https://github.com/othree/yajs.vim/commit/b069d90bc41f9f21ccad1e918262bf992d2aa75f
 Plug 'bling/vim-airline'
+
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
@@ -180,7 +182,6 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 
 " Change Modifier for Moving items up and down
 let g:move_key_modifier = 'C'
-let g:deoplete#enable_at_startup = 1
 
 let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_js_enabled_makers = ['eslint']
@@ -188,16 +189,6 @@ let g:neomake_jsx_enabled_makers = ['eslint']
 let g:neomake_ruby_enabled_makers = ['rubocop']
 let g:neomake_html_enabled_makers = []
 let g:neomake_scss_scsslint_args = ['-c', '~/.scss-lint.yml']
-
-" let g:neomake_elixir_mix_maker = {
-"       \ 'exe' : 'mix',
-"       \ 'args': ['compile', '--warnings-as-errors'],
-"       \ 'cwd': getcwd(),
-"       \ 'errorformat':
-"         \ '** %s %f:%l: %m,' .
-"         \ '%f:%l: warning: %m'
-"       \ }
-
 let g:neomake_elixir_enabled_makers = ['mix']
 
 " React
@@ -206,3 +197,10 @@ let g:jsx_ext_required = 0
 " Send tests to new tmux window
 let g:rspec_command = 'call Send_to_Tmux("bundle exec rspec {spec}\n")'
 noremap <leader>e :!elixir %:p<CR>
+
+" https://elliotekj.com/2016/11/22/setup-ctrlp-to-use-ripgrep-in-vim/
+if executable('rg')
+  set grepprg=rg\ --color=never
+  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+  let g:ctrlp_use_caching = 0
+endif

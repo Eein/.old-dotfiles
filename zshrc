@@ -16,3 +16,5 @@ alias sudo='sudo '
 alias flushdns='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder; echo DNS cache flushed'
 
 tic ~/$TERM.ti
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
