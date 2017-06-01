@@ -10,6 +10,7 @@ set hlsearch
 set mouse=a
 set number
 set title
+set clipboard=unnamedplus
 
 " Better remaps
 nnoremap 0 ^
@@ -19,12 +20,6 @@ nnoremap ` '
 " Buffers
 map <C-H> :bprev<CR>
 map <C-L> :bnext<CR>
-
-" Remap wq and q to close buffer
-cnoreabbrev wq w<bar>BD
-
-" cnoreabbrev <expr> q getcmdtype() == ":" && getcmdline() == 'q' ? 'bd' : 'q'
-autocmd BufDelete * if len(filter(range(1, bufnr('$')), '! empty(bufname(v:val)) && buflisted(v:val)')) == 1 | quit | endif
 
 " Mapping Leaders
 map <Leader>vi :e ~/.dotfiles/vimrc<CR>
@@ -39,10 +34,6 @@ autocmd Filetype ruby map <Leader>T :call RunAllSpecs()<CR>
 " Elixir Leaders
 autocmd BufRead,BufNewFile *.{exs} setlocal filetype=exunit
 autocmd FileType exunit map <leader>t :call Send_to_Tmux("mix test ". expand('%:p') ."\n")<CR>
-
-" Global copy paste
-map <Leader>y "+y
-map <Leader>p "+p
 
 " Fix Backspace
 set backspace=eol,start,indent
@@ -98,7 +89,6 @@ Plug 'tpope/vim-repeat'
 
 " Git
 Plug 'tpope/vim-fugitive'
-Plug 'qpkorr/vim-bufkill'
 
 "" Ruby / Rails specific Plugs
 Plug 'tpope/vim-rails'
@@ -118,6 +108,9 @@ Plug 'w0ng/vim-hybrid'
 "" Vim Snippets
 Plug 'neomake/neomake'
 Plug 'MarcWeber/vim-addon-mw-utils'
+
+" Node File Stuff
+Plug 'moll/vim-node'
 
 "" All of your Plugins must be added before the following line
 call plug#end()            " required
@@ -149,9 +142,6 @@ augroup END
 highlight LineNr ctermbg=black
 set cursorline
 
-" Required for airline to show up
-" set laststatus=2
-
 " Set more natural splits
 set splitright
 set splitbelow
@@ -169,13 +159,6 @@ autocmd! BufRead * Neomake
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
 
-" Set .es6 files to use javascript syntax
-au BufNewFile,BufRead *.es6 set filetype=javascript
-
-" Set .twig files to jinja2 (only way)
-au BufRead,BufNewFile *.twig set filetype=jinja
-au BufRead,BufNewFile *.html set filetype=jinja
-
 " Airline Settings
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
@@ -184,15 +167,10 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 let g:move_key_modifier = 'C'
 
 let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_js_enabled_makers = ['eslint']
-let g:neomake_jsx_enabled_makers = ['eslint']
 let g:neomake_ruby_enabled_makers = ['rubocop']
 let g:neomake_html_enabled_makers = []
 let g:neomake_scss_scsslint_args = ['-c', '~/.scss-lint.yml']
 let g:neomake_elixir_enabled_makers = ['mix']
-
-" React
-let g:jsx_ext_required = 0
 
 " Send tests to new tmux window
 let g:rspec_command = 'call Send_to_Tmux("bundle exec rspec {spec}\n")'

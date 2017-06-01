@@ -14,6 +14,7 @@ source ~/.api # Source API keys
 alias vim='nvim'
 alias sudo='sudo '
 alias flushdns='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder; echo DNS cache flushed'
+alias ctags='/usr/local/Cellar/ctags/5.8_1/bin/ctags'
 
 tic ~/$TERM.ti
 
