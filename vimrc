@@ -68,11 +68,11 @@ call plug#begin('~/.nvim/plugged')
 "" Misc
 Plug 'sheerun/vim-polyglot' " Fix for weird comment issue: https://github.com/othree/yajs.vim/commit/b069d90bc41f9f21ccad1e918262bf992d2aa75f
 Plug 'bling/vim-airline'
-
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'jgdavey/tslime.vim'
+Plug 'neomake/neomake'
 
 "" Multiple Word Selection using Ctrl+n
 Plug 'terryma/vim-multiple-cursors'
@@ -100,14 +100,15 @@ Plug 'thoughtbot/vim-rspec'
 Plug 'slashmili/alchemist.vim'
 
 "" react
-Plug 'chemzqm/vim-jsx-improve'
+Plug 'mxw/vim-jsx'
+Plug 'benjie/neomake-local-eslint.vim'
 
 "" Color Scheme
 Plug 'w0ng/vim-hybrid'
 
 "" Vim Snippets
-Plug 'neomake/neomake'
-Plug 'MarcWeber/vim-addon-mw-utils'
+" Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'SirVer/ultisnips'
 
 " Node File Stuff
 Plug 'moll/vim-node'
@@ -171,6 +172,8 @@ let g:neomake_ruby_enabled_makers = ['rubocop']
 let g:neomake_html_enabled_makers = []
 let g:neomake_scss_scsslint_args = ['-c', '~/.scss-lint.yml']
 let g:neomake_elixir_enabled_makers = ['mix']
+let g:jsx_ext_required = 0
+let g:UltiSnipsSnippetsDir = '~/.dotfiles/config/nvim/snippets/'
 
 " Send tests to new tmux window
 let g:rspec_command = 'call Send_to_Tmux("bundle exec rspec {spec}\n")'

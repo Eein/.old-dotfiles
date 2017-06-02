@@ -1,0 +1,76 @@
+snippet desc
+	describe('${1}', () => {
+	})
+snippet it
+	it('${1}', () => {
+	})
+snippet class
+	class ${1} {
+
+		constructor(${2}) {
+		}
+
+	}
+snippet im
+	import ${1} from '${2}'
+snippet ()
+	(${1}) => {
+	}
+snippet comp
+	import React, { Component, PropTypes } from 'react'
+
+	export default class ${1} extends Component {
+		static propTypes = {
+		}
+
+		render() {
+			return (
+				<div></div>
+			)
+		}
+	}
+snippet pure
+	import React, { PureComponent, PropTypes } from 'react'
+
+	export default class ${1} extends PureComponent {
+		static propTypes = {
+		}
+
+		render() {
+			return (
+				<div></div>
+			)
+		}
+	}
+snippet rf
+	import React, { PropTypes } from 'react'
+
+	export default function ${1}() {
+		return (
+			<div></div>
+		)
+	}
+snippet rt
+	import React from 'react'
+	import { shallow } from 'enzyme'
+	import `substitute(Filename(), '.test', '', '')` from './`substitute(Filename(), '.test', '', '')`'
+
+	describe('<`substitute(Filename(), '.test', '', '')` />', () => {
+		it('renders', () => {
+			const wrapper = shallow(<`substitute(Filename(), '.test', '', '')` />)
+			expect(wrapper.length).toBeTruthy
+		})
+	})
+snippet connect
+	import { connect } from 'react-redux'
+	import `expand('%:p:h:t')` from './`expand('%:p:h:t')`'
+
+	function mapStateToProps(state) {
+		return {}
+	}
+
+	function mapDispatchToProps(dispatch) {
+		return {}
+	}
+
+	export default connect(mapStateToProps, mapDispatchToProps)(`expand('%:p:h:t')`)
