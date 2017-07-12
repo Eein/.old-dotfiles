@@ -73,6 +73,8 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'jgdavey/tslime.vim'
 Plug 'neomake/neomake'
+Plug 'qpkorr/vim-bufkill'
+Plug 'duggiefresh/vim-easydir'
 
 "" Multiple Word Selection using Ctrl+n
 Plug 'terryma/vim-multiple-cursors'
