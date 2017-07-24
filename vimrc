@@ -91,6 +91,7 @@ Plug 'tpope/vim-repeat'
 
 " Git
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 
 "" Ruby / Rails specific Plugs
 Plug 'tpope/vim-rails'
@@ -173,7 +174,7 @@ let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_ruby_enabled_makers = ['rubocop']
 let g:neomake_html_enabled_makers = []
 let g:neomake_scss_scsslint_args = ['-c', '~/.scss-lint.yml']
-let g:neomake_elixir_enabled_makers = ['mix']
+let g:neomake_elixir_enabled_makers = []
 let g:jsx_ext_required = 0
 let g:UltiSnipsSnippetsDir = '~/.dotfiles/config/nvim/snippets/'
 
