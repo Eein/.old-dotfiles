@@ -75,6 +75,7 @@ Plug 'jgdavey/tslime.vim'
 Plug 'neomake/neomake'
 Plug 'qpkorr/vim-bufkill'
 Plug 'duggiefresh/vim-easydir'
+Plug 'mhinz/vim-grepper'
 
 "" Multiple Word Selection using Ctrl+n
 Plug 'terryma/vim-multiple-cursors'
@@ -188,3 +189,6 @@ if executable('rg')
   let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
   let g:ctrlp_use_caching = 0
 endif
+
+let g:grepper = {
+    \ 'tools': ['rg', 'git'] }
