@@ -77,6 +77,10 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'duggiefresh/vim-easydir'
 Plug 'mhinz/vim-grepper'
 
+" NETRW replacement
+Plug 'Shougo/unite.vim'
+Plug 'Shougo/vimfiler'
+
 "" Multiple Word Selection using Ctrl+n
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-sleuth'
@@ -153,7 +157,7 @@ set splitbelow
 
 " Nerdtree styled :Explore
 let g:netrw_liststyle=3
-cabbrev E Explore
+cabbrev E VimFilerExplorer
 
 " Clear all trailling whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
