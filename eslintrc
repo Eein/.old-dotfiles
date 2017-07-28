@@ -1,0 +1,19 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["standard", "standard-react"],
+  "rules": {
+    "camelcase": [0],
+    "comma-dangle": [2, "always-multiline"],
+    "space-before-function-paren": [2, "never"]
+  },
+  "globals": {
+     "afterEach": false,
+     "beforeEach": false,
+     "describe": false,
+     "expect": false,
+     "fetch": false,
+     "it": false,
+     "window": false,
+     "xit": false
+  }
+}

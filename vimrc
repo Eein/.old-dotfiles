@@ -26,6 +26,13 @@ map <Leader>vi :e ~/.dotfiles/vimrc<CR>
 map <Leader>so :source ~/.vimrc<CR>
 map <Leader>i mmgg=G'm
 
+" Remap wq and q to close buffer
+cnoreabbrev wq w<bar>BD
+
+" cnoreabbrev <expr> q getcmdtype() == ":" && getcmdline() == 'q' ? 'bd' : 'q'
+autocmd BufDelete * if len(filter(range(1, bufnr('$')), '! empty(bufname(v:val)) && buflisted(v:val)')) == 1 | quit | endif
+
+
 " Rspec Leaders
 autocmd BufRead,BufNewFile *.{rb} setlocal filetype=ruby
 autocmd Filetype ruby map <Leader>t :call RunCurrentSpecFile()<CR>
@@ -176,6 +183,7 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 let g:move_key_modifier = 'C'
 
 let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_javascript_jsx_enabled_makers = ['eslint']
 let g:neomake_ruby_enabled_makers = ['rubocop']
 let g:neomake_html_enabled_makers = []
 let g:neomake_scss_scsslint_args = ['-c', '~/.scss-lint.yml']
