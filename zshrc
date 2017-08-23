@@ -11,6 +11,7 @@ source $ZSH/oh-my-zsh.sh
 source ~/.api # Source API keys
 
 # Custom Aliases
+alias stripeforward='ultrahook stripe http://localhost:3000/payment_notifications/stripe'
 alias vim='nvim'
 alias sudo='sudo '
 alias flushdns='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder; echo DNS cache flushed'

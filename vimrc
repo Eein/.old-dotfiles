@@ -25,6 +25,7 @@ map <C-L> :bnext<CR>
 map <Leader>vi :e ~/.dotfiles/vimrc<CR>
 map <Leader>so :source ~/.vimrc<CR>
 map <Leader>i mmgg=G'm
+cnoreabbrev E VimFilerExplorer
 
 " Remap wq and q to close buffer
 cnoreabbrev wq w<bar>BD
@@ -163,8 +164,7 @@ set splitright
 set splitbelow
 
 " Nerdtree styled :Explore
-let g:netrw_liststyle=3
-cabbrev E VimFilerExplorer
+" let g:netrw_liststyle=3
 
 " Clear all trailling whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
