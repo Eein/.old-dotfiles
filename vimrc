@@ -24,7 +24,7 @@ map <C-L> :bnext<CR>
 " Mapping Leaders
 map <Leader>vi :e ~/.dotfiles/vimrc<CR>
 map <Leader>so :source ~/.vimrc<CR>
-map <Leader>i mmgg=G'm
+map <Leader>i :e <C-R>=expand("%:p:h")."/index.js"<CR><CR>
 cnoreabbrev E VimFilerExplorer
 
 " Remap wq and q to close buffer
@@ -84,6 +84,9 @@ Plug 'neomake/neomake'
 Plug 'qpkorr/vim-bufkill'
 Plug 'duggiefresh/vim-easydir'
 Plug 'mhinz/vim-grepper'
+
+" temp lua
+Plug 'tbastos/vim-lua'
 
 " NETRW replacement
 Plug 'Shougo/unite.vim'
