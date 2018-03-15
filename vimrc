@@ -84,9 +84,11 @@ Plug 'neomake/neomake'
 Plug 'qpkorr/vim-bufkill'
 Plug 'duggiefresh/vim-easydir'
 Plug 'mhinz/vim-grepper'
+Plug 'triglav/vim-visual-increment'
 
 " temp lua
 Plug 'tbastos/vim-lua'
+Plug 'rust-lang/rust.vim'
 
 " NETRW replacement
 Plug 'Shougo/unite.vim'

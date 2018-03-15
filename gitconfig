@@ -1,6 +1,7 @@
 [user]
     name = William Volin
     email = me@williamvolin.com
+    signingkey = 0DA44BB5F2C069D3
 [core]
     editor = nvim
     excludesfile = /Users/eein/.global_ignore
