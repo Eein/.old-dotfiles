@@ -34,4 +34,4 @@ export GPG_TTY=$(tty)
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
 
-ulimit -n 65536 65536
+# ulimit -n 65536 65536
