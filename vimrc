@@ -126,6 +126,7 @@ Plug 'benjie/neomake-local-eslint.vim'
 
 "" Color Scheme
 Plug 'w0ng/vim-hybrid'
+Plug 'vim-airline/vim-airline-themes'
 
 "" Vim Snippets
 " Plug 'MarcWeber/vim-addon-mw-utils'
@@ -183,6 +184,7 @@ set guioptions-=L  "remove left-hand scroll bar
 " Airline Settings
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline_theme='hybrid'
 
 " Change Modifier for Moving items up and down
 let g:move_key_modifier = 'C'
