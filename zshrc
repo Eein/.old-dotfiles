@@ -25,6 +25,7 @@ tic ~/$TERM.ti
 export PATH="/usr/local/opt/qt/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
+export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 export GPG_TTY=$(tty)
 
 # tabtab source for serverless package
