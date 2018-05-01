@@ -120,6 +120,9 @@ Plug 'thoughtbot/vim-rspec'
 "" Elixir
 Plug 'slashmili/alchemist.vim'
 
+"" Elm
+Plug 'ElmCast/elm-vim'
+
 "" react
 Plug 'mxw/vim-jsx'
 Plug 'benjie/neomake-local-eslint.vim'
