@@ -132,8 +132,9 @@ Plug 'w0ng/vim-hybrid'
 Plug 'vim-airline/vim-airline-themes'
 
 "" Vim Snippets
-" Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'SirVer/ultisnips'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
 
 " Node File Stuff
 Plug 'moll/vim-node'
