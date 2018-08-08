@@ -139,12 +139,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
-<<<<<<< HEAD
-=======
-
-" Node File Stuff
-Plug 'moll/vim-node'
->>>>>>> 8c040341c907fc92a70eacc3b654f60eb826488a
 
 "" All of your Plugins must be added before the following line
 call plug#end()            " required
