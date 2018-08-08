@@ -11,6 +11,7 @@ set mouse=a
 set number
 set title
 set clipboard=unnamedplus
+set autoread
 
 " Better remaps
 nnoremap 0 ^
@@ -24,7 +25,11 @@ map <C-L> :bnext<CR>
 " Mapping Leaders
 map <Leader>vi :e ~/.dotfiles/vimrc<CR>
 map <Leader>so :source ~/.vimrc<CR>
+
+" opens the index file of a named connected component
 map <Leader>i :e <C-R>=expand("%:p:h")."/index.js"<CR><CR>
+
+" maps :E to File Explorer
 cnoreabbrev E VimFilerExplorer
 
 " Remap wq and q to close buffer
@@ -54,6 +59,7 @@ if exists("&wildignorecase")
    set wildignorecase
 endif
 
+" ignores stuff I dont care about
 set wildmode=list:longest
 set wildmenu
 set wildignore=*.o,*.obj,*~
@@ -74,7 +80,7 @@ set wildignore+=*.png,*.jpg,*.gif
 call plug#begin('~/.nvim/plugged')
 "
 "" Misc
-Plug 'sheerun/vim-polyglot' " Fix for weird comment issue: https://github.com/othree/yajs.vim/commit/b069d90bc41f9f21ccad1e918262bf992d2aa75f
+Plug 'sheerun/vim-polyglot'
 Plug 'bling/vim-airline'
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-commentary'
@@ -86,8 +92,7 @@ Plug 'duggiefresh/vim-easydir'
 Plug 'mhinz/vim-grepper'
 Plug 'triglav/vim-visual-increment'
 
-" temp lua
-Plug 'tbastos/vim-lua'
+" rust
 Plug 'rust-lang/rust.vim'
 
 " NETRW replacement
@@ -109,7 +114,6 @@ Plug 'tpope/vim-repeat'
 
 " Git
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb'
 
 "" Ruby / Rails specific Plugs
 Plug 'tpope/vim-rails'
@@ -132,11 +136,9 @@ Plug 'w0ng/vim-hybrid'
 Plug 'vim-airline/vim-airline-themes'
 
 "" Vim Snippets
-" Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'SirVer/ultisnips'
-
-" Node File Stuff
-Plug 'moll/vim-node'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
 
 "" All of your Plugins must be added before the following line
 call plug#end()            " required
@@ -175,7 +177,7 @@ set splitbelow
 " Nerdtree styled :Explore
 " let g:netrw_liststyle=3
 
-" Clear all trailling whitespace on save
+" Clear all trailing whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
 autocmd! BufWritePost * Neomake
 autocmd! BufRead * Neomake
@@ -195,15 +197,12 @@ let g:move_key_modifier = 'C'
 let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_javascript_jsx_enabled_makers = ['eslint']
 let g:neomake_ruby_enabled_makers = ['rubocop']
-let g:neomake_html_enabled_makers = []
 let g:neomake_scss_scsslint_args = ['-c', '~/.scss-lint.yml']
 let g:neomake_elixir_enabled_makers = []
 let g:jsx_ext_required = 0
-let g:UltiSnipsSnippetsDir = '~/.dotfiles/config/nvim/snippets/'
 
 " Send tests to new tmux window
 let g:rspec_command = 'call Send_to_Tmux("bundle exec rspec {spec}\n")'
-noremap <leader>e :!elixir %:p<CR>
 
 " https://elliotekj.com/2016/11/22/setup-ctrlp-to-use-ripgrep-in-vim/
 if executable('rg')
