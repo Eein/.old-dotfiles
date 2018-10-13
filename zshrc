@@ -28,9 +28,6 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 export GPG_TTY=$(tty)
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-
 case `uname` in
   Darwin)
     # commands for OS X go here
