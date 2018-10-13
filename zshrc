@@ -5,7 +5,14 @@ export PATH="$HOME/.composer/vendor/bin:$HOME/.rbenv/shims:/usr/local/bin:/usr/b
 export EDITOR='nvim'
 
 source $ZSH/oh-my-zsh.sh
-source ~/.api # Source API keys
+
+if [ -f $HOME/.api ]; then
+  source ~/.api # Source API keys
+fi
+
+if [ -f $HOME/.keys ]; then
+  source ~/.keys # Source keys
+fi
 
 # Custom Aliases
 alias stripeforward='ultrahook stripe http://tiltifydev.com:3000/payment_notifications/stripe'
@@ -21,28 +28,21 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 export GPG_TTY=$(tty)
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
 case `uname` in
   Darwin)
     # commands for OS X go here
     alias flushdns='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder; echo DNS cache flushed'
     export PATH="$(yarn global bin):$PATH"
-    export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
   ;;
   Linux)
+    # commands for Linux go here
     export PATH="$HOME/.rbenv/bin:$PATH"
     eval "$(rbenv init -)"
-    # commands for Linux go here
   ;;
 esac
 
 # ulimit -n 65536 65536
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /home/will/.nvm/versions/node/v8.11.1/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /home/will/.nvm/versions/node/v8.11.1/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /home/will/.nvm/versions/node/v8.11.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /home/will/.nvm/versions/node/v8.11.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
