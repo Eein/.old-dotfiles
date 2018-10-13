@@ -42,7 +42,6 @@ fi
 
 # Install Neovim Helpers
 pip3 install neovim
-sudo gem install neovim
 
 # Create Directories
 mkdir ~/code
@@ -55,4 +54,5 @@ echo " Install OhMyZSH                              "
 echo " :PlugInstall                                 "
 echo " Update your SSH keys!       			            "
 echo " Install Ruby 2.3.7          			            "
+echo " Install Neovim Gem                           "
 echo "----------------------------------------------"
