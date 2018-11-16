@@ -105,7 +105,7 @@ Plug 'tpope/vim-sleuth'
 Plug 'cakebaker/scss-syntax.vim'
 
 "" Moves lines up and down with cmd+j/k
-Plug 'matze/vim-move'
+Plug 'matze/vim-move', { 'tag': 'v1.3' }
 
 "" QOL
 Plug 'jiangmiao/auto-pairs'
