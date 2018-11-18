@@ -43,7 +43,7 @@
    :prefix "\\"
    "em" '((lambda() (interactive)(find-file "~/.emacs.d/init.el")) :which-key "Opens init.el")
    "so" '(load-file "~/.emacs.d/init.el" :which-key "Loads init.el")
-   "o" '((lambda() (interactive)(find-file "~/todo.org")) :which-key "Loads todo.org")
+   "o" '((lambda() (interactive)(find-file "~/Library/Mobile\ Documents/com~apple~CloudDocs/Documents/tasks.org")) :which-key "Loads todo.org")
    )
 )
 
