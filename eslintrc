@@ -2,18 +2,22 @@
   "parser": "babel-eslint",
   "extends": ["standard", "standard-react"],
   "rules": {
-    "camelcase": [0],
+    "no-unused-expressions": [0],
     "comma-dangle": [2, "always-multiline"],
-    "space-before-function-paren": [2, "never"]
+    "no-unused-vars": [2, { "ignoreRestSiblings": true, "args": "none" }],
+    "space-before-function-paren": [2, { "asyncArrow": "always", "named": "never", "anonymous": "never" }],
+    "import/first": [0]
+  },
+  "env": {
+     "jest": true
   },
   "globals": {
-     "afterEach": false,
-     "beforeEach": false,
-     "describe": false,
-     "expect": false,
      "fetch": false,
-     "it": false,
+     "Blob": false,
+     "File": false,
+     "URL": false,
+     "FormData": false,
+     "Headers": false,
      "window": false,
-     "xit": false
   }
 }

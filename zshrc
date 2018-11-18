@@ -33,6 +33,7 @@ case `uname` in
     # commands for OS X go here
     alias flushdns='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder; echo DNS cache flushed'
     export PATH="$(yarn global bin):$PATH"
+    export EMACS="*term*"
   ;;
   Linux)
     # commands for Linux go here
