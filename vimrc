@@ -1,7 +1,7 @@
 filetype off
 set hidden
 syntax enable
-set guifont=Monaco:h14
+set guifont=Source\ Code\ Pro:h14
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
@@ -37,7 +37,6 @@ cnoreabbrev wq w<bar>BD
 
 " cnoreabbrev <expr> q getcmdtype() == ":" && getcmdline() == 'q' ? 'bd' : 'q'
 autocmd BufDelete * if len(filter(range(1, bufnr('$')), '! empty(bufname(v:val)) && buflisted(v:val)')) == 1 | quit | endif
-
 
 " Rspec Leaders
 autocmd BufRead,BufNewFile *.{rb} setlocal filetype=ruby
@@ -91,6 +90,7 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'duggiefresh/vim-easydir'
 Plug 'mhinz/vim-grepper'
 Plug 'triglav/vim-visual-increment'
+Plug 'jceb/vim-orgmode'
 
 " rust
 Plug 'rust-lang/rust.vim'
@@ -173,9 +173,6 @@ set cursorline
 " Set more natural splits
 set splitright
 set splitbelow
-
-" Nerdtree styled :Explore
-" let g:netrw_liststyle=3
 
 " Clear all trailing whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e

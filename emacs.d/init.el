@@ -19,6 +19,9 @@
 (setq sentence-end-double-space nil)	; sentence SHOULD end with only a point.
 (setq default-fill-column 80)		; toggle wrapping text at the 80th character
 (setq initial-scratch-message "dont write any javascript today") ; print a default message in the empty scratch buffer opened at startup
+(setq shell-file-name "/usr/local/bin/zsh")
+(setq shell-command-switch "-c")
+(setq-default indent-tabs-mode nil)
 
 ; neotree
 (use-package neotree :ensure t)
@@ -77,6 +80,7 @@
    "o" '((lambda() (interactive)(find-file "~/Library/Mobile Documents/com~apple~CloudDocs/Documents/tasks.org")) :which-key "Loads todo.org")
    "i" '((lambda() (interactive)(find-file "./index.js")) :which-key "Loads an index.js in current directory")
    "f" '(helm-rg :which-key "Rg on file")
+   "t" 'rspec-verify
    )
 )
 
@@ -174,8 +178,12 @@
   (setq flycheck-eslintrc "~/.eslintrc")
   (setq js2-mode-show-parse-errors nil)
   (setq js2-mode-show-strict-warnings nil))
+
 ; ruby-specific
 (require 'smartparens-ruby)
+(add-to-list 'load-path "~/.emacs.d/rspec-simple/")
+(require 'rspec-simple)
+
 ; js/jsx
 (require 'smartparens-javascript)
 (use-package rjsx-mode :ensure t
@@ -192,7 +200,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (emojify autopair evil-collection badger-theme rjsx-mode evil-multiedit helm-rg use-package))))
+    (rspec-mode emojify autopair evil-collection badger-theme rjsx-mode evil-multiedit helm-rg use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
