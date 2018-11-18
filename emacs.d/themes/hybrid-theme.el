@@ -766,8 +766,8 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(js2-jsdoc-html-tag-name ((t (:foreground ,hybrid-red-1))))
    `(js2-object-property ((t (:foreground ,hybrid-blue+1))))
    `(js2-magic-paren ((t (:foreground ,hybrid-blue-5))))
-   `(js2-private-function-call ((t (:foreground ,hybrid-cyan))))
-   `(js2-function-call ((t (:foreground ,hybrid-cyan))))
+   `(js2-private-function-call ((t (:foreground ,hybrid-yellow))))
+   `(js2-function-call ((t (:foreground ,hybrid-yellow))))
    `(js2-private-member ((t (:foreground ,hybrid-blue-1))))
    `(js2-keywords ((t (:foreground ,hybrid-magenta))))
 ;;;;; ledger-mode
