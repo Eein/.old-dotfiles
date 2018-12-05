@@ -12,6 +12,7 @@ Plug 'mhinz/vim-grepper'
 Plug 'triglav/vim-visual-increment'
 Plug 'jceb/vim-orgmode'
 Plug 'k0kubun/vim-open-github'
+Plug 'tpope/vim-speeddating'
 
 " rust
 Plug 'rust-lang/rust.vim'
@@ -44,6 +45,8 @@ Plug 'thoughtbot/vim-rspec'
 
 "" Elixir
 Plug 'slashmili/alchemist.vim'
+Plug 'elixir-editors/vim-elixir'
+
 
 "" Elm
 Plug 'ElmCast/elm-vim'
