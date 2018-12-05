@@ -7,5 +7,5 @@ autocmd Filetype ruby map <Leader>T :call RunAllSpecs()<CR>
 let g:neomake_ruby_enabled_makers = ['rubocop']
 
 " TODO: is this needed anymore?
-" let g:rspec_command = 'call Send_to_Tmux("bundle exec rspec {spec}\n")'
+let g:rspec_command = 'call Send_to_Tmux("bundle exec rspec {spec}\n")'
 
