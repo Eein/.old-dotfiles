@@ -11,6 +11,7 @@ Plug 'duggiefresh/vim-easydir'
 Plug 'mhinz/vim-grepper'
 Plug 'triglav/vim-visual-increment'
 Plug 'jceb/vim-orgmode'
+Plug 'k0kubun/vim-open-github'
 Plug 'tpope/vim-speeddating'
 
 " rust
