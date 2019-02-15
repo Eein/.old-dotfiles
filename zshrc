@@ -16,7 +16,7 @@ fi
 
 # Custom Aliases
 alias stripeforward='ultrahook stripe http://tiltifydev.com:3000/payment_notifications/stripe'
-alias ppmforward='ssh -R 80:172.20.0.2:3000 serveo.net'
+alias ppmforward='ssh -R 80:tiltifydev.com:3000 serveo.net'
 alias paypalforward='ultrahook paypal http://172.21.0.3:3000/payment_notifications'
 alias rmswap='find . -type f -name "*.swp" -exec rm -f {} \;'
 alias vim='nvim'

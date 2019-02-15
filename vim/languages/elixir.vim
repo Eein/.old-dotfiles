@@ -1,5 +1,5 @@
 " exunit spec runners
-autocmd BufRead,BufNewFile *.{exs} setlocal filetype=exunit
+autocmd BufRead,BufNewFile *.{exs} setlocal filetype=elixir
 autocmd FileType exunit map <leader>t :call Send_to_Tmux("mix test ". expand('%:p') ."\n")<CR>
 
 " neomake makers
