@@ -103,7 +103,7 @@ font:
     #style: Italic
 
   # Point size
-  size: 14.0
+  size: 12.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -122,7 +122,7 @@ font:
   #
   # Thin strokes are suitable for retina displays, but for non-retina screens
   # it is recommended to set `use_thin_strokes` to `false`
-  use_thin_strokes: true
+  use_thin_strokes: false
 
 # Display the time it takes to redraw each frame.
 render_timer: false
@@ -135,7 +135,7 @@ draw_bold_text_with_bright_colors: true
 
 colors:
   primary:
-    background: '0x2E3440'
+    background: '0x111111'
     foreground: '0xD8DEE9'
   cursor:
     text: '0x2E3440'
