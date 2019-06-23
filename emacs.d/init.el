@@ -1,6 +1,8 @@
 ; packages
 (require 'package)
-(add-to-list 'package-archives '("melpa" .  "http://melpa.org/packages/") 'APPEND)
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/") t)
+
 (package-initialize)
 (use-package exec-path-from-shell :ensure t)
 (exec-path-from-shell-initialize) ; for mac TODO: make an alternative
@@ -48,11 +50,6 @@
   (sp-local-pair "<" ">")
   (sp-local-pair "<%" "%>"))
 
-; emoji
-(use-package emojify :ensure t
-  :init
-  (add-hook 'after-init-hook #'global-emojify-mode))
-
 ; which-key
 (use-package which-key :ensure t
   :init
@@ -91,14 +88,7 @@
 (global-linum-mode t)
 (add-to-list 'default-frame-alist '(fullscreen . maximized)) ;starts fullscreen
 
-; languages
-
-; theme
-; only for custom
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-(load-theme 'hybrid t)
-(set-background-color "#1D1F21")
-
+; powerline
 (use-package powerline :ensure t)
 (powerline-default-theme)
 
@@ -111,6 +101,7 @@
   (define-key evil-normal-state-map (kbd "C-n") nil)
   (define-key evil-visual-state-map (kbd "C-n") nil)
   (evil-ex-define-cmd "E" 'neotree-toggle))
+  (evil-ex-define-cmd "q[uit]" nil)
 
 ; org mode
 (use-package org :ensure t)
@@ -187,7 +178,11 @@
   :config
   (add-to-list 'auto-mode-alist '(".*\\.js\\'" . rjsx-mode)))
 
+(use-package alchemist :ensure t)
 
+; theme
+(use-package dracula-theme :ensure t
+    :init (load-theme 'dracula t))
 
 ; generated garbage
 (custom-set-variables
@@ -197,7 +192,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (rspec-mode emojify autopair evil-collection badger-theme rjsx-mode evil-multiedit helm-rg use-package))))
+    (rspec-mode autopair evil-collection badger-theme rjsx-mode evil-multiedit helm-rg use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
