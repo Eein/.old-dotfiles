@@ -22,7 +22,6 @@
 (setq shell-file-name "/usr/local/bin/zsh")
 (setq shell-command-switch "-c")
 (setq-default indent-tabs-mode nil)
-
 ; neotree
 (use-package neotree :ensure t)
 (setq neo-theme 'arrow)
@@ -181,8 +180,6 @@
 
 ; ruby-specific
 (require 'smartparens-ruby)
-(add-to-list 'load-path "~/.emacs.d/rspec-simple/")
-(require 'rspec-simple)
 
 ; js/jsx
 (require 'smartparens-javascript)
