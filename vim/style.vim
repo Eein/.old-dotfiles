@@ -1,5 +1,7 @@
 set background=dark
-colorscheme hybrid
+
+let g:dracula_colorterm = 0
+colorscheme dracula
 
 " visual matching parens
 hi MatchParen ctermfg=033 ctermbg=234 cterm=bold
@@ -10,13 +12,14 @@ call matchadd('ColorColumn', '\%81v', 100)
 
 " sets cursor line number colors
 hi clear CursorLine
-hi CursorLineNR ctermfg=026 cterm=bold
-hi LineNr ctermbg=235
+hi CursorLineNR ctermfg=83 cterm=bold
+hi LineNr ctermfg=237
+
 augroup CLSet
   autocmd! ColorScheme * hi clear CursorLine
   autocmd! ColorScheme * hi CursorLineNR cterm=bold
 augroup END
-highlight LineNr ctermbg=black
+
 set cursorline
 
 " set more natural splits

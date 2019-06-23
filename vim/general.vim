@@ -1,3 +1,4 @@
+set backupcopy=yes
 filetype off
 set hidden
 syntax enable

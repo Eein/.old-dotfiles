@@ -56,7 +56,8 @@ Plug 'mxw/vim-jsx'
 Plug 'benjie/neomake-local-eslint.vim'
 
 "" Color Scheme
-Plug 'w0ng/vim-hybrid'
+Plug 'dracula/vim', { 'as': 'dracula' }
+"Plug 'w0ng/vim-hybrid'
 Plug 'vim-airline/vim-airline-themes'
 
 "" Vim Snippets
