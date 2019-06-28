@@ -1,6 +1,3 @@
-ZSH_THEME='eein'
-
-export ZSH=~/.oh-my-zsh
 export PATH="$HOME/bin:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/Library/Python/2.7/bin"
 export EDITOR='nvim'
 
