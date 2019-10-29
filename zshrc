@@ -1,7 +1,7 @@
 zstyle ':completion:*' list-colors 
 
 export PATH=~/.cargo/bin:$PATH
-
+export GPG_TTY=$(tty)
 alias vim='nvim'
 
 ### Added by Zplugin's installer
@@ -17,14 +17,14 @@ zplugin light denysdovhan/spaceship-prompt
 
 case `uname` in
   Darwin)
-    alias ls='ls -G'
+    export PATH="/usr/local/opt/erlang@21/bin:$PATH"
   ;;
   Linux)
-    zplugin ice atclone"dircolors -b LS_COLORS > c.zsh" atpull'%atclone' pick"c.zsh"
-    zplugin load trapd00r/LS_COLORS
-    alias ls='ls --color=auto'
   ;;
 esac
+
+alias ls='exa'
+alias l='exa -l --all --group-directories-first --git'
 
 export SPACESHIP_PROMPT_ADD_NEWLINE=false
 export SPACESHIP_GIT_BRANCH_PREFIX=""
@@ -45,3 +45,4 @@ autoload -Uz compinit && compinit
 . $HOME/.asdf/completions/asdf.bash
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH="/usr/local/opt/libpq/bin:$PATH"
