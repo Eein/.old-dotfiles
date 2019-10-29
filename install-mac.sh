@@ -22,6 +22,7 @@ brew tap thoughtbot/formulae && brew install rcm
 brew install ripgrep
 brew install neovim
 brew install exa
+brew install ranger
 brew install zsh
 brew cask install alacritty
 
@@ -35,4 +36,4 @@ chsh -s $(which zsh)
 
 cd ~/.dotfiles
 rcup
- 
+
