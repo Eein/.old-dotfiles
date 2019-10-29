@@ -21,6 +21,7 @@ brew install \
 brew tap thoughtbot/formulae && brew install rcm
 brew install ripgrep
 brew install neovim
+brew install exa
 brew install zsh
 brew cask install alacritty
 
