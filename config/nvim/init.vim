@@ -11,6 +11,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tpope/vim-vinegar'
   Plug 'terryma/vim-multiple-cursors'
   Plug 'qpkorr/vim-bufkill'
+  Plug 'mhinz/vim-grepper'
   Plug 'ap/vim-buftabline'
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   " Ranger
