@@ -1,6 +1,7 @@
-zstyle ':completion:*' list-colors 
+zstyle ':completion:*' list-colors
 
 export PATH=~/.cargo/bin:$PATH
+export TERM=xterm-256color
 export GPG_TTY=$(tty)
 alias vim='nvim'
 
@@ -11,6 +12,7 @@ autoload -Uz _zplugin
 ### End of Zplugin installer's chunk
 
 zplugin light zsh-users/zsh-autosuggestions
+
 zplugin light zdharma/fast-syntax-highlighting
 zplugin light zdharma/history-search-multi-word
 zplugin light denysdovhan/spaceship-prompt
@@ -40,7 +42,7 @@ export SPACESHIP_PROMPT_ORDER=(
   char          # Prompt character
   )
 
-autoload -Uz compinit && compinit 
+autoload -Uz compinit && compinit
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
 
