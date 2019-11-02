@@ -41,8 +41,11 @@ export SPACESHIP_PROMPT_ORDER=(
   exit_code     # Exit code section
   char          # Prompt character
   )
-
-autoload -Uz compinit && compinit
+autoload -Uz compinit
+for dump in ~/.zcompdump(N.mh+24); do
+  compinit
+done
+compinit -C
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
 
