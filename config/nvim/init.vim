@@ -1,5 +1,6 @@
 call plug#begin('~/.local/share/nvim/plugged')
-  Plug 'kaicataldo/material.vim'
+  Plug 'drewtempelmeyer/palenight.vim'
+  Plug 'itchyny/lightline.vim'
   Plug 'sheerun/vim-polyglot'
   Plug 'kien/ctrlp.vim'
   Plug 'tpope/vim-surround'
@@ -26,6 +27,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'slashmili/alchemist.vim'
 call plug#end()
 
+
 set backupcopy=yes
 filetype off
 syntax enable
@@ -40,12 +42,23 @@ set number
 set title
 set clipboard=unnamedplus
 set autoread
-
 set termguicolors
 set background=dark
 set splitright
 set splitbelow
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+colorscheme palenight
+let g:palenight_terminal_italics=1
+let g:lightline = {
+      \ 'colorscheme': 'palenight',
+      \ }
+"let g:lightline.colorscheme = 'palenight'
+
+" Buffer tab line colors
+hi BufTabLineCurrent ctermfg=Cyan ctermbg=Black cterm=bold
+hi BufTabLineActive  ctermfg=243 ctermbg=238 cterm=NONE
+hi BufTabLineHidden  ctermfg=242
+hi BufTabLineFill    ctermfg=242
 
 " set ignore options
 if exists("&wildignorecase")
@@ -73,10 +86,6 @@ set wildignore+=*.png,*.jpg,*.gif
 autocmd BufWritePre * :%s/\s\+$//e
 autocmd! BufWritePost * Neomake
 autocmd! BufRead * Neomake
-
-let g:material_theme_style = 'darker'
-let g:material_terminal_italics = 1
-colorscheme material
 
 cnoreabbrev E Ranger
 
@@ -110,3 +119,4 @@ autocmd BufRead,BufNewFile *.{exs} setlocal filetype=elixir
 
 " neomake makers
 let g:neomake_elixir_enabled_makers = ['mix', 'credo']
+
