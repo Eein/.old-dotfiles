@@ -1,9 +1,10 @@
 zstyle ':completion:*' list-colors
 
 export PATH=~/.cargo/bin:$PATH
-export TERM=xterm-256color
 export GPG_TTY=$(tty)
 alias vim='nvim'
+
+alias tmux='tmux -2'  # for 256color
 
 ### Added by Zplugin's installer
 source ~/.zplugin/bin/zplugin.zsh
