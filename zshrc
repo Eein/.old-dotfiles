@@ -1,6 +1,5 @@
 zstyle ':completion:*' list-colors
 
-export PATH=~/.cargo/bin:$PATH
 export GPG_TTY=$(tty)
 alias vim='nvim'
 
@@ -42,4 +41,6 @@ compinit -C
 . $HOME/.asdf/completions/asdf.bash
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 export PATH="/usr/local/opt/libpq/bin:$PATH"
+export PATH=~/.cargo/bin:$PATH
