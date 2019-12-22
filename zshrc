@@ -13,18 +13,9 @@ autoload -Uz _zplugin
 ### End of Zplugin installer's chunk
 
 zplugin light zsh-users/zsh-autosuggestions
-
 zplugin light zdharma/fast-syntax-highlighting
 zplugin light zdharma/history-search-multi-word
 zplugin light denysdovhan/spaceship-prompt
-
-case `uname` in
-  Darwin)
-    export PATH="/usr/local/opt/erlang@21/bin:$PATH"
-  ;;
-  Linux)
-  ;;
-esac
 
 alias ls='exa'
 alias l='exa -l --all --group-directories-first --git'
