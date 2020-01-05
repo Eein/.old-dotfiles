@@ -42,5 +42,6 @@ else
   polybar main &
 fi
 
+# picom -c ~/.config/picom/picom.conf &
 alacritty &
 exec bspwm

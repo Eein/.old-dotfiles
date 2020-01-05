@@ -18,8 +18,8 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #222
-background-alt = #444
+background = #292D3e
+background-alt = #aa292D3e
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
 foreground-alt = #555
@@ -28,12 +28,12 @@ secondary = #e60053
 alert = #bd2c40
 
 [bar/main]
-monitor = DP-0
-width = 100%
+monitor = DP-4
+width = ${env:POLYBAR_WIDTH}
 height = 27
-;offset-x = 1%
-;offset-y = 1%
-radius = 6.0
+offset-x = 12
+offset-y = 10
+; radius = 6.0
 fixed-center = false
 
 background = ${colors.background}
@@ -42,7 +42,7 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-border-size = 4
+border-size = 0
 border-color = #00000000
 
 padding-left = 0
@@ -78,13 +78,12 @@ cursor-click = pointer
 cursor-scroll = ns-resize
 
 [bar/secondary]
-monitor = DP-4
-width = 100%
+monitor = DP-0
+width = ${env:POLYBAR_WIDTH}
 height = 27
-;offset-x = 1%
-;offset-y = 1%
-radius = 6.0
-fixed-center = false
+offset-x = 12
+offset-y = 10
+; radius = 6.0
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -92,7 +91,7 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-border-size = 4
+border-size = 0
 border-color = #00000000
 
 padding-left = 0
@@ -469,7 +468,7 @@ screenchange-reload = true
 ;pseudo-transparency = false
 
 [global/wm]
-margin-top = 5
-margin-bottom = 5
+margin-top = 0
+margin-bottom = 0
 
 ; vim:ft=dosini

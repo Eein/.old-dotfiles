@@ -21,6 +21,14 @@ zplugin light denysdovhan/spaceship-prompt
 alias ls='exa'
 alias l='exa -l --all --group-directories-first --git'
 
+if [ `hostname` = nanami ]; then
+  # 1366 resolution
+  export POLYBAR_WIDTH=1342
+else
+  # 1080 resolution
+  export POLYBAR_WIDTH=1896
+fi
+
 export SPACESHIP_PROMPT_ADD_NEWLINE=false
 export SPACESHIP_GIT_BRANCH_PREFIX=""
 export SPACESHIP_CHAR_SYMBOL="› "
