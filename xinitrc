@@ -36,17 +36,11 @@ if [ `hostname` = shibusa ]; then
   xrandr --output DP-0 --left-of DP-4 --primary
   killall polybar 2> /dev/null
 
-  redshift -l 32.22174:-110.92648 &
   polybar main &
   polybar secondary &
 else
   polybar nanami &
 fi
-
-if [ -f "~/MEGA/Photos/background.jpg" ]; then
-  feh --bg-center ~/MEGA/Photos/background.jpg
-fi
-
 
 # picom -c ~/.config/picom/picom.conf &
 alacritty &
