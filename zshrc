@@ -23,8 +23,14 @@ alias l='exa -l --all --group-directories-first --git'
 
 if [ `hostname` = nanami ]; then
   # 1366 resolution
+  export MAIN_MONITOR=eDP1
   export POLYBAR_WIDTH=1342
+elif [ `hostname` = shibusa ]; then
+  export MAIN_MONITOR=DP-0
+  export SECONDARY_MONITOR=DP-4
+  export POLYBAR_WIDTH=1896
 else
+  export MAIN_MONITOR=$(xrandr --query | grep " connected" | cut -d" " -f1)
   # 1080 resolution
   export POLYBAR_WIDTH=1896
 fi
