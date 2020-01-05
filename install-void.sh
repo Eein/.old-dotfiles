@@ -1,12 +1,9 @@
 # Install NetworkManager for wifi support
 # sudo xbps-install -S NetworkManager
 
-sudo xbps-install -S git zsh neovim rcm tmux ripgrep exa alacritty docker
-sudo xbps-install -S docker-compose which curl python3 python3-neovim xclip ranger
-sudo xbps-install -S bspwm sxhkd xorg picom firefox google-fonts-ttf font-symbola alsa-utils pulseaudio
-sudo xbps-install -S gst-libav polybar
+sudo xbps-install -S git zsh neovim rcm tmux ripgrep exa alacritty docker htop docker-compose which curl python3 python3-neovim xclip ranger bspwm sxhkd xorg picom firefox google-fonts-ttf font-symbola alsa-utils pulseaudio gst-libav polybar
 
-# we need to isntall helvetica and courier for firefox font default
+# Dont forget to set helvetica in firefox for smoother fonts
 
 # If an application needs alsa directly - add alsa-plugins-pulseaudio
 # link the dbus for pulseaudio

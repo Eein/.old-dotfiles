@@ -33,8 +33,11 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 if [ `hostname` = shibusa ]; then
-  xrandr --output DP-1 --primary
-  xrandr --output DP-3 --left-of DP-1
+  xrandr --output DP-0 --left-of DP-4 --primary
+  killall polybar 2> /dev/null
+
+  polybar main &
+  polybar secondary &
 else
   polybar main &
 fi
