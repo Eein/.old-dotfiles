@@ -39,7 +39,7 @@ if [ `hostname` = shibusa ]; then
   polybar main &
   polybar secondary &
 else
-  polybar main &
+  polybar nanami &
 fi
 
 # picom -c ~/.config/picom/picom.conf &
