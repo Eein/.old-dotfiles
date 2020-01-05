@@ -4,6 +4,8 @@ export GPG_TTY=$(tty)
 alias vim='nvim'
 
 alias tmux='tmux -2'  # for 256color
+alias xi='xbps-install'
+
 
 ### Added by Zplugin's installer
 source ~/.zplugin/bin/zplugin.zsh
@@ -21,6 +23,7 @@ alias l='exa -l --all --group-directories-first --git'
 
 export SPACESHIP_PROMPT_ADD_NEWLINE=false
 export SPACESHIP_GIT_BRANCH_PREFIX=""
+export SPACESHIP_CHAR_SYMBOL="› "
 export SPACESHIP_PROMPT_ORDER=(
   user          # Username section
   dir           # Current directory section
