@@ -43,6 +43,11 @@ else
   polybar nanami &
 fi
 
+if [ -f "~/MEGA/Photos/background.jpg" ]; then
+  feh --bg-center ~/MEGA/Photos/background.jpg
+fi
+
+
 # picom -c ~/.config/picom/picom.conf &
 alacritty &
 exec bspwm
