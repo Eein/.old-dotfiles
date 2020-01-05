@@ -32,6 +32,9 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 
 sudo usermod -aG docker $(whoami)
 
+# start docker
+ln -s /etc/sv/docker /var/service/
+
 rcup
 
 chsh -s $(which zsh)
