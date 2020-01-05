@@ -32,6 +32,12 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-polybar example &
+if [ `hostname` = shibusa ]; then
+  xrandr --output DP-1 --primary
+  xrandr --output DP-3 --left-of DP-1
+else
+  polybar main &
+fi
+
 alacritty &
 exec bspwm

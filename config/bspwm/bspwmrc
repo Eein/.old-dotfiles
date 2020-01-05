@@ -2,7 +2,16 @@
 
 sxhkd &
 
-bspc monitor -d I II III IV V VI VII VIII IX X
+if [ `hostname` = shibusa ]; then
+	# assign the monitors
+	bspc monitor DP-3 -d 4 5 6
+	bspc monitor DP-1 -d 1 2 3
+
+	# then swap so the primary is on the right
+	bspc monitor DP-1 -s DP-3
+else
+		bspc monitor -d 1 2 3 4 5 6 7 8 9 10
+fi
 
 bspc config border_width         0
 bspc config window_gap           0
