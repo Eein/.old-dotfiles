@@ -19,6 +19,13 @@ super + Escape
 # bspwm hotkeys
 #
 
+# take a screenshot of an area
+super + alt + s
+	import screenshot-$(date +%s).png
+
+super + ctrl + alt + 3
+	import -window root screenshot-$(date +%s).png
+
 # quit/restart bspwm
 super + alt + {q,r}
 	bspc {quit,wm -r}

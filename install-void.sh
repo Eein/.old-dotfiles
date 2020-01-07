@@ -1,7 +1,17 @@
 # Install NetworkManager for wifi support
 # sudo xbps-install -S NetworkManager
 
-sudo xbps-install -S git zsh neovim rcm tmux ripgrep exa alacritty docker htop docker-compose which curl python3 python3-neovim xclip ranger bspwm sxhkd xorg picom firefox google-fonts-ttf font-symbola alsa-utils pulseaudio gst-libav polybar feh
+sudo cp ./setup/00-repository-main.conf /etc/xbps.d/
+sudo cp ./setup/10-repository-nonfree.conf /etc/xbps.d/
+
+# sync
+sudo xbps-install -Sy
+# will likely update xbps
+sudo xbps-install -Syu
+# then update packages
+sudo xbps-install -Syu
+
+sudo xbps-install -Sy git zsh neovim rcm tmux ripgrep exa alacritty docker htop docker-compose which curl python3 python3-neovim xclip ranger bspwm sxhkd xorg picom firefox google-fonts-ttf font-symbola alsa-utils pulseaudio gst-libav polybar feh ImageMagick
 
 # Dont forget to set helvetica in firefox for smoother fonts
 
