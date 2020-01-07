@@ -20,9 +20,10 @@ super + Escape
 #
 
 # take a screenshot of an area
-super + alt + s
+super + alt + 3
 	import screenshot-$(date +%s).png
 
+# take a screenshot of the entire desktop
 super + ctrl + alt + 3
 	import -window root screenshot-$(date +%s).png
 
