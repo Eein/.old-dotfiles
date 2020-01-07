@@ -43,5 +43,6 @@ else
 fi
 
 # picom -c ~/.config/picom/picom.conf &
+megasync &
 alacritty &
 exec bspwm

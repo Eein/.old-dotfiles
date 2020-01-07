@@ -16,7 +16,7 @@ sudo xbps-install -Sy git zsh neovim rcm tmux ripgrep exa alacritty docker htop 
 # Dont forget to set helvetica in firefox for smoother fonts
 
 # If an application needs alsa directly - add alsa-plugins-pulseaudio
-# link the dbus for pulseaudio
+# link the dbus for pulseaudio and steam
 ln -s /etc/sv/dbus /var/service
 
 mkdir ~/.fonts
@@ -52,3 +52,6 @@ chsh -s $(which zsh)
 # Install Graphics Driver
 # Intel && intel media stuff
 # xbps-install -S mesa-dri intel-video-accel
+
+# STEAM
+# If you're installing void - you need to enable dbus via

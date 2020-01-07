@@ -9,7 +9,7 @@ super + Return
 
 # program launcher
 super + @space
-	dmenu_run
+	dmenu_run -l 10 -nb "#222222" -fn "Cascadia Code"
 
 # make sxhkd reload its configuration files:
 super + Escape

@@ -6,7 +6,6 @@ alias vim='nvim'
 alias tmux='tmux -2'  # for 256color
 alias xi='xbps-install'
 
-
 ### Added by Zplugin's installer
 source ~/.zplugin/bin/zplugin.zsh
 autoload -Uz _zplugin
