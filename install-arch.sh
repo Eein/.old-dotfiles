@@ -4,7 +4,7 @@
 # sync
 sudo pacman -Syu
 
-sudo pacman -Sy git base-devel zsh neovim tmux ripgrep exa alacritty docker htop docker-compose which curl python-neovim python3 xclip ranger bspwm sxhkd firefox polybar feh imagemagick
+sudo pacman -Sy git base-devel picom dmenu zsh neovim tmux ripgrep exa alacritty docker htop docker-compose which curl python-neovim python3 xclip ranger bspwm sxhkd firefox polybar feh imagemagick
 
 sudo pip3 install neovim
 # Dont forget to set helvetica in firefox for smoother fonts
