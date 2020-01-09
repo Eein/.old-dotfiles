@@ -39,8 +39,6 @@ else
   polybar nanami &
 fi
 
-alacritty &
-
 if [ `hostname` = shibusa ]; then
 	# assign the monitors
 	bspc monitor DP-0 -d 4 5 6
