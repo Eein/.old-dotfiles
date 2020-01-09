@@ -11,7 +11,7 @@ sudo xbps-install -Syu
 # then update packages
 sudo xbps-install -Syu
 
-sudo xbps-install -Sy git zsh neovim rcm tmux ripgrep exa alacritty docker htop docker-compose which curl python3 python3-neovim xclip ranger bspwm sxhkd xorg picom firefox google-fonts-ttf font-symbola alsa-utils pulseaudio gst-libav polybar feh ImageMagick
+sudo xbps-install -Sy git zsh neovim rcm tmux ripgrep exa alacritty docker htop docker-compose which curl python3 python3-neovim xclip ranger bspwm sxhkd xorg picom firefox alsa-utils pulseaudio gst-libav polybar feh ImageMagick
 
 # Dont forget to set helvetica in firefox for smoother fonts
 
@@ -19,8 +19,8 @@ sudo xbps-install -Sy git zsh neovim rcm tmux ripgrep exa alacritty docker htop 
 # link the dbus for pulseaudio and steam
 ln -s /etc/sv/dbus /var/service
 
-mkdir ~/.fonts
-curl -L https://github.com/microsoft/cascadia-code/releases/download/v1911.21/Cascadia.ttf > ~/.fonts/Cascadia.ttf
+mkdir ~/.local/share/fonts
+curl -L https://github.com/microsoft/cascadia-code/releases/download/v1911.21/Cascadia.ttf > ~/.local/share/fonts/Cascadia.ttf
 fc-cache -fv
 
 # if bluetooth is needed
@@ -28,9 +28,6 @@ fc-cache -fv
 # ln -s /etc/sv/bluetoothd /var/service
 # usermod -a -G bluetooth $USER
 # sv restart dbus
-
-# Hides bitmaps, so things look nice in browser
-# sudo ln -s /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
 
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.7.6
 
@@ -47,11 +44,8 @@ ln -s /etc/sv/docker /var/service/
 
 rcup
 
-chsh -s $(which zsh)
+echo "run chsh -s $(which zsh)"
 
-# Install Graphics Driver
-# Intel && intel media stuff
-# xbps-install -S mesa-dri intel-video-accel
-
-# STEAM
-# If you're installing void - you need to enable dbus via
+# echo "Install Graphics Driver"
+# echo "Intel && intel media stuff"
+# echo "xbps-install -S mesa-dri intel-video-accel"
