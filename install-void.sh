@@ -14,6 +14,7 @@ sudo xbps-install -Syu
 sudo xbps-install -Sy git dmenu zsh neovim rcm tmux ripgrep exa alacritty docker htop docker-compose which curl python3 python3-neovim xclip ranger bspwm sxhkd xorg picom firefox alsa-utils pulseaudio gst-libav polybar feh ImageMagick
 
 # megasync
+cd /tmp
 git clone --depth=1 https://github.com/void-linux/void-packages
 cd void-packages
 ./xbps-src binary-bootstrap
