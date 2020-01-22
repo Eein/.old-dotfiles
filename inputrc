@@ -1,5 +1,0 @@
-$include /etc/inputrc
-
-# fixes delete key
-"\e[3~": delete-char
-
