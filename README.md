@@ -10,8 +10,9 @@
   c. irc notifications
   ex. [ D 1 | E 2 | I 12 ]
 - consistent themes
-- Fix terminal DEL behavior
+- ~Fix terminal DEL behavior~
 - drop ranger for hunter https://aur.archlinux.org/packages/hunter/
+
 - write lurking software
   a. opens streams
   b. opens irc
@@ -20,4 +21,3 @@
 ## Bored
 - look for more rust replacements
 - explore bspwm options
-
