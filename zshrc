@@ -1,6 +1,8 @@
 zstyle ':completion:*' list-colors
 
 export GPG_TTY=$(tty)
+export EDITOR=nvim
+
 alias vim='nvim'
 
 alias tmux='tmux -2'  # for 256color

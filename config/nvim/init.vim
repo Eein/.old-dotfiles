@@ -10,6 +10,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tpope/vim-sleuth'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-vinegar'
+  Plug 'tpope/vim-rhubarb'
+  Plug 'tpope/vim-fugitive'
   Plug 'terryma/vim-multiple-cursors'
   Plug 'qpkorr/vim-bufkill'
   Plug 'mhinz/vim-grepper'
