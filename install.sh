@@ -24,8 +24,10 @@ sudo dpkg -i discord-0.0.9.deb
 rm discord-0.0.9.deb
 
 echo "> RCM for dotfile management... Say OK..."
+cd /tmp
 wget -qO - https://apt.thoughtbot.com/thoughtbot.gpg.key | sudo apt-key add -
 echo "deb https://apt.thoughtbot.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/thoughtbot.list > /dev/null
+cd ~/.dotfiles
 sudo apt-get -qq update
 sudo apt-get -qq install rcm
 
@@ -36,8 +38,14 @@ echo "> Zplugin"
 mkdir ~/.zplugin
 git clone https://github.com/zdharma/zplugin.git ~/.zplugin/bin
 
+
 echo "> ASDF"
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.7.4
+
+echo "> Cascadia Code"
+mkdir ~/.fonts
+curl -L https://github.com/microsoft/cascadia-code/releases/download/v1911.21/Cascadia.ttf > ~/.fonts/Cascadia.ttf
+fc-cache -fv
 
 echo "> TMUX"
 sudo apt-get -qq install tmux
@@ -64,14 +72,6 @@ sudo add-apt-repository \
 sudo apt remove -y docker docker-engine docker.io containerd runc
 sudo apt install -y docker-ce docker-ce-cli containerd.io docker-compose
 sudo usermod -aG docker $(whoami)
-
-echo "> pCloud"
-curl -LO https://p-def4.pcloud.com/cBZetST9hZtTO10SZN17cZZQ8t3N7Z2ZZ670ZkZVcA5VZAkZJFZL5ZqZlJZ5XZX0Z2JZpFZ6JZ9XZG5Z5kZg5Z1EnhkZMbAYkQQx9nYFXmFYhrkXofOerol7/pcloud
-chmod +x pcloud
-./pcloud </dev/null &>/dev/null &
-rm pcloud
-
-echo ">> LOG OUT AND IN FOR pCLOUD"
 
 echo "> RCUP Dotfiles"
 rcup

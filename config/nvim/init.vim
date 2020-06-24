@@ -10,6 +10,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tpope/vim-sleuth'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-vinegar'
+  Plug 'tpope/vim-rhubarb'
+  Plug 'tpope/vim-fugitive'
   Plug 'terryma/vim-multiple-cursors'
   Plug 'qpkorr/vim-bufkill'
   Plug 'mhinz/vim-grepper'
@@ -55,10 +57,11 @@ let g:lightline = {
 "let g:lightline.colorscheme = 'palenight'
 
 " Buffer tab line colors
-hi BufTabLineCurrent ctermfg=Cyan ctermbg=Black cterm=bold
-hi BufTabLineActive  ctermfg=243 ctermbg=238 cterm=NONE
-hi BufTabLineHidden  ctermfg=242
-hi BufTabLineFill    ctermfg=242
+" highlight BufTabLineCurrent cterm=NONE ctermbg=15 ctermfg=8 gui=NONE guibg=#ffffff guifg=#d70000
+highlight BufTabLineCurrent cterm=NONE ctermfg=15 ctermbg=8 guibg=#ffffff guifg=#000000
+highlight BufTabLineActive  cterm=NONE ctermfg=243 ctermbg=White guibg=#1d1f2b
+highlight BufTabLineHidden  cterm=NONE ctermfg=242
+highlight BufTabLineFill    cterm=NONE ctermfg=242
 
 " set ignore options
 if exists("&wildignorecase")
